@@ -1,29 +1,19 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const organizerSchema = new Schema({
-    firstname: { type: String, required: true },
-    lastname: String,
-    email: { type: String, required: true }
-});
-
 const attendeeSchema = new Schema({
-    firstname: { type: String, required: true },
-    lastname: String,
-    email: { type: String, required: true },
+    firstname: { type: Schema.Types.ObjectId, ref: 'User' },
+    lastname: { type: Schema.Types.ObjectId, ref: 'User' },
+    email: { type: Schema.Types.ObjectId, ref: 'User' },
     isgoing: Boolean
 });
-
-const datetimeSchema = new Schema({
-    date: Date
-})
 
 const eventSchema = new Schema({
   name: { type: String, required: true },
   category: {type: String, required: true },
-  organizer: { organizerSchema },
+  organizer: { type: Schema.Types.ObjectId, ref: 'User' },
   attendees: [ attendeeSchema ],
-  potentialDatetimes: [ datetimeSchema ],
+  potentialDatetimes: [ Date ],
   scheduledDatetime: Date,
   createdDate: { type: Date, default: Date.now }
 });
