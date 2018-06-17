@@ -17,6 +17,6 @@ const eventSchema = new Schema({
   confirmed: { type: Boolean, default: false }
 });
 
-const Event = mongoose.model("Event", eventSchema);
+const Event = mongoose.model( "Event", eventSchema );
 
 module.exports = Event;
