@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Books from "./pages/Books";
@@ -18,5 +19,11 @@ const App = () => (
     </div>
   </Router>
 );
+=======
+import React from 'react';
+// import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+const App = () => <h1>Hello World</h1>;
+>>>>>>> master
 
 export default App;
