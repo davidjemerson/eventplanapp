@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SplashHero = props => (
+export const SplashHero = props => (
   <div className="jumbotron jumbotron-fluid">
     <div className="container">
       <h1 className="display-4">PLAN AN EVENT TODAY</h1>
@@ -31,5 +31,3 @@ const SplashHero = props => (
     </div>
   </div>
 );
-
-export default SplashHero;

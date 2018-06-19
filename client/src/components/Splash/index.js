@@ -1,1 +1,2 @@
-export { default } from './SplashHero';
+export * from './SplashBody';
+export * from './SplashHero';
