@@ -1,7 +1,16 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import SplashHero from '../../components/Splash';
+import React from 'react';
+import Navbar from '../../components/Navbar';
+import { SplashBody, SplashHero, SplashLower } from '../../components/Splash';
+import Footer from '../../components/Footer';
 
-const Splash = () => <SplashHero />;
+const Splash = () => (
+  <div>
+    <Navbar />
+    <SplashHero />
+    <SplashBody />
+    <SplashLower />
+    <Footer />
+  </div>
+);
 
 export default Splash;
