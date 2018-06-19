@@ -1,7 +1,11 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import SplashHero from '../../components/Splash';
+import React from 'react';
+import { SplashBody, SplashHero } from '../../components/Splash';
 
-const Splash = () => <SplashHero />;
+const Splash = () => (
+  <div>
+    <SplashHero />
+    <SplashBody />
+  </div>
+);
 
 export default Splash;
