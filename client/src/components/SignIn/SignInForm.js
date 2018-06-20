@@ -1,14 +1,16 @@
 import React from 'react';
 
-export const SignInForm = props => (
+const SignInForm = props => (
   <div className="Input">
     <input
-      id={this.props.name}
+      id={props.name}
       autoComplete="false"
       required
-      type={this.props.type}
-      placeholder={this.props.placeholder}
+      type={props.type}
+      placeholder={props.placeholder}
     />
-    <label for={this.props.name} />
+    <label for={props.name} />
   </div>
 );
+
+export default SignInForm;

@@ -1,12 +1,15 @@
 import React from 'react';
+import SignInForm from './SignInForm';
 
-export const Modal = props => (
+const Modal = props => (
   <div className="Modal">
-    <form onSubmit={this.props.onSubmit} className="ModalForm">
-      <input id="name" type="text" placeholder="My Full Name" />
-      <input id="name" type="email" placeholder="youremail@you.com" />
-      <input id="password" type="password" placeholder="password" />
+    <form onSubmit={props.onSubmit} className="ModalForm">
+      <SignInForm id="name" type="text" placeholder="My Full Name" />
+      <SignInForm id="username" type="email" placeholder="youremail@you.com" />
+      <SignInForm id="password" type="password" placeholder="password" />
       <button>Log in</button>
     </form>
   </div>
 );
+
+export default Modal;
