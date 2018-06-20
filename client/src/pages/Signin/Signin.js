@@ -24,7 +24,7 @@ class Signin extends Component {
     let child;
 
     if (this.state.mounted) {
-      child = <Modal onSubmit={() => this.handleSubmit} />;
+      child = <Modal onSubmit={this.handleSubmit} />;
     }
     return (
       <div>
