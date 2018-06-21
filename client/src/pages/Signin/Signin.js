@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Modal from '../../components/SignIn/Modal';
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import './Signin.css';
 
@@ -8,17 +10,15 @@ class Signin extends Component {
     mounted: false,
   };
 
-  //TODO WRITE ALL THE FUNCTIONS TO HANDLE FORM SUBMIT HERE
+  // when component mounts, change state
   componentDidMount() {
     this.setState({ mounted: true });
   }
-
+  // when someone submits, set state back to false
   handleSubmit(e) {
     this.setState({ mounted: false });
     e.preventDefault();
   }
-
-  //TODO //////////////////////////////////////////////////
 
   render() {
     let child;
@@ -28,6 +28,7 @@ class Signin extends Component {
     }
     return (
       <div>
+        <Navbar />
         <ReactCSSTransitionGroup
           transitionName="example"
           transitionEnterTimeout={500}
@@ -35,6 +36,8 @@ class Signin extends Component {
         >
           {child}
         </ReactCSSTransitionGroup>
+        <div className="mr-sticky" />
+        <Footer className="footer" />
       </div>
     );
   }
