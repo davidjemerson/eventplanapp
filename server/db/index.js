@@ -4,7 +4,7 @@
 const mongoose = require('mongoose')
 mongoose.Promise = global.Promise
 let MONGO_URL
-const MONGO_LOCAL_URL = 'mongodb://localhost/mern-passport'
+const MONGO_LOCAL_URL = 'mongodb://localhost/eventplandb'
 
 if (process.env.MONGODB_URI) {
 	mongoose.connect(process.env.MONGODB_URI)
@@ -26,3 +26,4 @@ db.once('open', () => {
 })
 
 module.exports = db
+module.exports = { User: require("./models/user") };
