@@ -26,7 +26,7 @@ const userSchema = new Schema({
 	// },
 	// firstName: { type: String },
 	// lastName: { type: String }
-})
+});
 
 // Define schema methods
 userSchema.methods = {
@@ -49,7 +49,7 @@ userSchema.pre('save', function(next) {
 	}
 	// this.password = this.hashPassword(this.password)
 	// next()
-})
+});
 
 // Create reference to User & export
 const User = mongoose.model('User', userSchema)
