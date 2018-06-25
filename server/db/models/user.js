@@ -15,7 +15,8 @@ const userSchema = new Schema({
 		googleId: { type: String, required: false }
 	},
 	photos: [],
-	events: [ {type: Schema.Types.ObjectId, ref: 'Event'} ]
+	events: [ {type: Schema.Types.ObjectId, ref: 'Event'} ],
+	friends: [ { type: String } ]
 	// local: {
 	// 	email: { type: String, unique: true },
 	// 	password: { type: String }
