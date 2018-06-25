@@ -27,17 +27,18 @@ class Signin extends Component {
       child = <Modal onSubmit={this.handleSubmit} />;
     }
     return (
-      <div>
-        <Navbar />
-        <ReactCSSTransitionGroup
-          transitionName="example"
-          transitionEnterTimeout={500}
-          transitionLeaveTimeout={300}
-        >
-          {child}
-        </ReactCSSTransitionGroup>
-        <div className="mr-sticky" />
-        <Footer className="footer" />
+      <div className="App Site">
+        <div className="Site-Content">
+          <Navbar />
+          <ReactCSSTransitionGroup
+            transitionName="example"
+            transitionEnterTimeout={500}
+            transitionLeaveTimeout={300}
+          >
+            {child}
+          </ReactCSSTransitionGroup>
+        </div>
+        <Footer />
       </div>
     );
   }
