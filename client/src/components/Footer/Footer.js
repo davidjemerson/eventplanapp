@@ -7,7 +7,7 @@ class Footer extends Component {
   render() {
     return (
       <div>
-        <footer className="navbar navbar-expand-lg navbar-light bg-light">
+        <footer className="navbar navbar-expand-lg">
           <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
               <li className="nav-item active">

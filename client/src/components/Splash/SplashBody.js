@@ -1,52 +1,46 @@
 import React from 'react';
 
 export const SplashBody = props => (
-  <div className="container-fluid">
-    <div className="row">
-      <div className="col mb-5">
-        <a href="https://placeholder.com">
-          <img src="http://via.placeholder.com/800x300" />
-        </a>
-      </div>
-      <div className="col mb-5">
-        <h1>ABOUT</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium
-          molestias soluta repellat suscipit reprehenderit modi ullam explicabo
-          vel illum neque ducimus minus, quod dolorem, maiores iure fugiat qui
-          sint! Accusantium incidunt sit alias repellat magnam tempora
-          laudantium nobis placeat doloribus, at quibusdam, optio natus earum.
-          Dolore repudiandae vero aliquam iste reprehenderit saepe aspernatur
-          nemo alias molestiae consectetur aliquid eligendi nostrum minima fugit
-          veritatis eos sapiente, rem et deserunt voluptas odit. Dolorum minus
-          consectetur, mollitia magnam deserunt odit porro explicabo
-          reprehenderit odio dignissimos natus molestiae quibusdam culpa ab aut
-          consequuntur ratione reiciendis sequi incidunt recusandae accusantium.
-          Dolore, natus at? Ullam, dolore!
+  <div className="container text-center info-container">
+
+    <h2>MAKE IT EASIER ON YOURSELF</h2>
+    <p className="by-line">Learn how EventPlan can work for you.</p>
+
+    <div className="row content-rows">
+      <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <i class="far fa-calendar-alt fa-5x"></i>
+
+        <h5>PLAN</h5>
+        <h6>
+          <i className="far fa-arrow-alt-circle-right" /> Start by planning an event.
+        </h6>
+        <p className="p-text">
+          Sign up or sign in to your account. Navigate to the create event page and fill out the details for your outing. We provide all of the necessary details to make it as easy as possible.
         </p>
       </div>
-      <div className="w-100" />
-      <div className="col">
-        <h1 className="text-right">HOW IT WORKS</h1>
-        <p className="text-right">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat
-          iusto sit temporibus ratione quos totam dolor officiis aut! Sed,
-          officiis saepe fugiat voluptas similique beatae ea aut iste
-          accusantium, distinctio dolorem nobis ducimus quam a! Necessitatibus
-          alias a rem velit. Voluptatum, sunt. Doloribus nisi, consectetur
-          officia quibusdam, rem ea reprehenderit voluptatum non facere, maxime
-          repellendus possimus veniam mollitia quasi exercitationem a ipsam
-          dolores culpa accusantium iusto odio? Quibusdam ipsa voluptates
-          reprehenderit eius deleniti? Soluta sint culpa, amet architecto esse
-          nihil laboriosam quidem assumenda odio laudantium velit corporis,
-          veritatis quo atque. Qui et explicabo cumque libero, voluptates
-          incidunt sit perspiciatis itaque.
+
+      <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <i class="fas fa-users fa-5x"></i>
+
+        <h5>INVITE</h5>
+        <h6>
+          <i className="far fa-arrow-alt-circle-right" /> Invite your friends.
+        </h6>
+        <p className="p-text">
+          Once you set up the details to your event, start inviting friends! Each one of your invited friend will get a notification with all of the details you've set up. All they need to do is vote 
         </p>
       </div>
-      <div className="col">
-        <a href="https://placeholder.com">
-          <img src="http://via.placeholder.com/800x300" />
-        </a>
+
+      <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <i class="fas fa-magic fa-5x"></i>
+
+        <h5>VOTE / SCHEDULE</h5>
+        <h6>
+          <i className="far fa-arrow-alt-circle-right" /> Vote and schedule your event.
+        </h6>
+        <p className="p-text">
+          All of the friends will vote on which date and time works best for them. Once your minimum is met, we automatically schedule the event and send all of invitees a notification!
+        </p>
       </div>
     </div>
   </div>
