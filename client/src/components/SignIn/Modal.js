@@ -64,7 +64,7 @@ class Modal extends Component {
                   <p>-- Or Sign in with Google --</p>
                 </span>
                 <a href="/auth/google">
-                <button>Google +</button>
+                  <button>Google +</button>
                 </a>
               </div>
               <div className="col">

@@ -23,7 +23,7 @@ app.use(routes);
 app.use(passport.initialize())
 app.use(passport.session()) 
 
-app.use('/auth', require('./auth'))
+app.use('/auth', require('../routes/auth'))
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/eventplandb");
 

@@ -24,7 +24,7 @@ class Signin extends Component {
     let child;
 
     if (this.state.mounted) {
-      child = <Modal onSubmit={this.handleSubmit} />;
+      child = <Modal _login={this.props._login} _googleSignin={this.props._googleSignin} onSubmit={this.handleSubmit} />;
     }
     return (
       <div className="App Site">

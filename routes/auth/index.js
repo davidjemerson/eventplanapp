@@ -1,16 +1,16 @@
 const express = require('express')
 const router = express.Router()
-const User = require('../db/models/user')
-const passport = require('../passport')
+const User = require('../../server/db/models/user')
+const passport = require('../../server/passport')
 
-router.get('/google', passport.authenticate('google', { scope: ['profile'] }))
-router.get(
-	'/google/callback',
-	passport.authenticate('google', {
-		successRedirect: '/',
-		failureRedirect: '/login'
-	})
-)
+router.get('/auth/google',
+  passport.authenticate('google', { scope: ['https://www.googleapis.com/auth/plus.login'] }));
+
+router.get('/auth/google/callback', 
+  passport.authenticate('google', { failureRedirect: '/login' }),
+  function(req, res) {
+    res.redirect('/');
+  });
 
 // this route is just used to get the user basic info
 router.get('/user', (req, res, next) => {

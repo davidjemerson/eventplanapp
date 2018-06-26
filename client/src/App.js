@@ -54,7 +54,8 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Splash} />
             <Route exact path="/dashboard/home" component={Home} />
-            <Route exact path="/signin" component={Signin} />
+            <Route exact path="/signin" render={() =>
+            <Signin _login={this._login} _googleSignin={this._googleSignin} />} />
           </Switch>
         </div>
       </Router>
