@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Splash from './pages/Splash';
 import Home from './pages/Home';
 import Signin from './pages/Signin';
+import Create from './pages/Create';
 
 class App extends Component {
   constructor() {

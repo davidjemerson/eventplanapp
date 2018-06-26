@@ -5,47 +5,50 @@ import React, { Component } from 'react';
 class Navbar extends Component {
   render() {
     return (
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-          EVENTPLAN
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarTogglerDemo02"
-          aria-controls="navbarTogglerDemo02"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon" />
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">
-                ABOUT <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                HOW IT WORKS
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                INVITE
-              </a>
-            </li>
-          </ul>
-          <a class="nav-link" href="#">
-            SIGN IN
+      <nav className="navbar navbar-expand-lg">
+          <a className="navbar-brand" href="#">
+            EVENTPLAN
           </a>
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-            Get Started
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon" />
           </button>
-        </div>
+
+          <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
+              <li className="nav-item active">
+                <a className="nav-link" href="#">
+                  ABOUT
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#">
+                  HOW IT WORKS
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#">
+                  INVITE
+                </a>
+              </li>
+            </ul>
+            <a className="nav-link" href="#">
+              SIGN IN
+            </a>
+            <button
+              className="btn btn-outline-success my-2 my-sm-0"
+              type="submit"
+            >
+              GET STARTED
+            </button>
+          </div>
       </nav>
     );
   }
