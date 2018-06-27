@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Navbar from '../../components/Navbar';
+import NavbarDash from '../../components/NavbarDash';
 import Footer from '../../components/Footer';
 import Sidebar from '../../components/Sidebar';
 import CreatePage from '../../components/Create/CreatePage';
@@ -41,7 +41,7 @@ class Create extends Component {
     return (
       <div className="App Site">
         <div className="Site-Content">
-          <Navbar />
+          <NavbarDash />
           <div className="container">
             <div className="row">
               <div className="col-2">
