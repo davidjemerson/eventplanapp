@@ -1,0 +1,105 @@
+/* Navbar styles
+------------------------------------------------*/
+.navDash {
+  width: 100%;
+  background-color: #1c2127;
+}
+
+.navbar {
+  padding-top: 25px;
+  padding-left: 4%;
+  padding-right: 4%;
+  padding-bottom: 25px;
+}
+
+a.navbar-brand {
+  font-family: 'Montserrat', sans-serif;
+  color: #29bf89;
+  font-size: 25px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  padding: 5px 20px;
+  border: 1px solid #29bf89;
+}
+
+.nav-link {
+  font-family: 'Montserrat', sans-serif;
+  color: #bdbdbd;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.nav-link:hover {
+  color: #29bf89;
+}
+
+.btn {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  color: #bdbdbd;
+  border-color: #29bf89;
+  border-radius: 0px;
+}
+
+.btn:hover {
+  color: #1c2127;
+  background-color: #29bf89;
+  border-color: #29bf89;
+  font-weight: 500;
+  border-radius: 0px;
+}
+
+/* Sidebar styles
+------------------------------------------------*/
+.sidebar {
+  width: 255px;
+  top: 25px;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  display: block;
+  padding: 25px 0 0 0;
+  overflow-x: hidden;
+  background-color: #bdbdbd;
+}
+
+/* Home Container styles
+------------------------------------------------*/
+.main-container {
+  max-width: 70%;
+  margin-top: 25px;
+  margin-left: 25px;
+  margin-bottom: 50px;
+}
+
+.attend-heading {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 27px;
+}
+
+.pend-heading {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 27px;
+  margin-top: 50px;
+}
+
+.create-heading {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 27px;
+  margin-top: 50px;
+}
+
+/* Sticky Footer styles
+------------------------------------------------*/
+.Site {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.Site-Content {
+  flex: 1;
+}

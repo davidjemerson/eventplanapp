@@ -1,5 +1,33 @@
 .event-card {
-  max-width: 18rem;
+  max-width: 16rem;
   text-align: center;
-  margin-left: 200px;
+  background-color: #29bf89;
+  border-radius: 0;
+}
+
+.card-header {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.card-month {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  margin-top: 0;
+}
+
+.card-day {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 60px;
+  margin-top: 0; 
+}
+
+.card-text {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  margin-top: 0;
 }
