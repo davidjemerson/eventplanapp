@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Modal from '../../components/EventModal/Modal';
-import Navbar from '../../components/Navbar';
+import NavbarDash from '../../components/NavbarDash';
 import Sidebar from '../../components/Sidebar';
 import EventCard from '../../components/EventCard';
 import Footer from '../../components/Footer';
@@ -29,7 +29,7 @@ class Home extends Component {
     }
     return (
       <div>
-      <Navbar />
+      <NavbarDash />
       <Sidebar />
       <ReactCSSTransitionGroup
         transitionName="example"

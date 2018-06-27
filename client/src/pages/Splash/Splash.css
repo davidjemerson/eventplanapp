@@ -161,13 +161,13 @@ h6 {
   margin-top: 5px;
 }
 
-.btn-lower {
+.btn.btn-lower {
   border: #1c2127 solid 1px;
   background-color: transparent;
   color: #fff;
 }
 
-.btn-lower:hover {
+.btn.btn-lower:hover {
   border: #1c2127 solid 1px;
   background-color: #1c2127;
   color: #29bf89;
