@@ -42,13 +42,13 @@ class Create extends Component {
       <div className="App Site">
         <div className="Site-Content">
           <NavbarDash />
-          <div className="container">
+          <div className="container-fluid">
             <div className="row">
-              <div className="col-2">
+              <div className="sidebar">
                 <Sidebar />
               </div>
-              <div className="col-10">
-                <h1>CREATE YOUR EVENT!</h1>
+              <div className="col-12 create-container">
+                <h1 className="create-heading">CREATE YOUR EVENT!</h1>
                 <hr />
                 <CreateForm />
               </div>
