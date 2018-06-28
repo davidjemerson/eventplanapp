@@ -3,7 +3,7 @@ import React from 'react';
 const CreateForm = props => (
   <form className="create-event">
     <div className="form-group">
-      <label htmlFor="event-type">Event Type</label>
+      <label className="event-type" htmlFor="event-type">Event Type</label>
       <input
         type="text"
         value={props.search}
@@ -18,7 +18,7 @@ const CreateForm = props => (
         //TODO add in the list to populate from to the /utils/API
         {/* {props.eventType.map(event => <option value={event} key={event} />)} */}
       </datalist>
-      <label htmlFor="event-name">Event Name</label>
+      <label className="event-name" htmlFor="event-name">Event Name</label>
       <input
         type="text"
         name="event-name"
@@ -26,7 +26,7 @@ const CreateForm = props => (
         placeholder="Name Your Awesome Event"
         id="event-name"
       />
-      <label htmlFor="event-location">Where's Your Event</label>
+      <label className="event-location" htmlFor="event-location">Where's Your Event</label>
       <input
         type="text"
         name="event-location"
@@ -34,7 +34,7 @@ const CreateForm = props => (
         placeholder="Where's This Going Down?"
         id="event-location"
       />
-      <label htmlFor="event-address">What Is The Address?</label>
+      <label className="event-address" htmlFor="event-address">What Is The Address?</label>
       <input
         type="text"
         name="event-address"
@@ -42,7 +42,7 @@ const CreateForm = props => (
         placeholder="Address of the Event"
         id="event-address"
       />
-      <label htmlFor="friends-reqd" />
+      <label className="friends-reqd" htmlFor="friends-reqd">How Many People Do You Need?</label>
       <select name="friends-reqd" id="friends-reqd" className="form-control">
         <option>1</option>
         <option>2</option>
@@ -55,9 +55,9 @@ const CreateForm = props => (
         <option>9</option>
         <option>10</option>
       </select>
-      //TODO
-      {/* add some code here for react-select -> https://jedwatson.github.io/react-select/ */}
-      <label htmlFor="add-friends">Wanna Invite Some People?</label>
+      
+      {/* //TODO add some code here for react-select -> https://jedwatson.github.io/react-select/ */}
+      <label className="add-friends" htmlFor="add-friends">Wanna Invite Some People?</label>
       <input
         type="text"
         name="add-friends"

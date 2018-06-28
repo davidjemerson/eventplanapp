@@ -6,7 +6,7 @@ class Navbar extends Component {
   render() {
     return (
       <nav className="navbar navbar-expand-lg">
-          <a className="navbar-brand" href="#">
+          <a className="navbar-brand" href="/">
             EVENTPLAN
           </a>
           <button
@@ -39,15 +39,17 @@ class Navbar extends Component {
                 </a>
               </li>
             </ul>
-            <a className="nav-link" href="#">
+            <a className="nav-link" href="/signin">
               SIGN IN
             </a>
+            <a href="/signin">
             <button
               className="btn btn-outline-success my-2 my-sm-0"
               type="submit"
             >
               GET STARTED
             </button>
+            </a>
           </div>
       </nav>
     );
