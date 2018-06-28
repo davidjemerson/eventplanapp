@@ -42,11 +42,7 @@ const CreateForm = props => (
         placeholder="Address of the Event"
         id="event-address"
       />
-<<<<<<< HEAD
       <label className="friends-reqd" htmlFor="friends-reqd">How Many People Do You Need?</label>
-=======
-      <label htmlFor="friends-reqd">How Many People Do You Need</label>
->>>>>>> changed a couple of lables on the /dashboard/create page
       <select name="friends-reqd" id="friends-reqd" className="form-control">
         <option>1</option>
         <option>2</option>
@@ -59,15 +55,9 @@ const CreateForm = props => (
         <option>9</option>
         <option>10</option>
       </select>
-<<<<<<< HEAD
       
       {/* //TODO add some code here for react-select -> https://jedwatson.github.io/react-select/ */}
       <label className="add-friends" htmlFor="add-friends">Wanna Invite Some People?</label>
-=======
-
-      {/* //TODO add some code here for react-select -> https://jedwatson.github.io/react-select/ */}
-      <label htmlFor="add-friends">Wanna Invite Some People?</label>
->>>>>>> changed a couple of lables on the /dashboard/create page
       <input
         type="text"
         name="add-friends"
