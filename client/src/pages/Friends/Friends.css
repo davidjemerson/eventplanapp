@@ -1,3 +1,35 @@
+/* Sidebar styles
+------------------------------------------------*/
+.sidebar {
+  width: 255px;
+  top: 25px;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  display: block;
+  padding: 25px 0 0 0;
+  overflow-x: hidden;
+  background-color: #bdbdbd;
+}
+
+/* Create Container styles
+------------------------------------------------*/
+.friend-container {
+  max-width: 70%;
+  margin-top: 25px;
+  margin-left: 25px;
+  margin-bottom: 100px;
+}
+
+.friend-heading {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 27px;
+  margin-top: 0;
+}
+
+/* Sticky Footer styles
+------------------------------------------------*/
 .Site {
   display: flex;
   flex-direction: column;
