@@ -22,6 +22,12 @@ a.navbar-brand {
   border: 1px solid #29bf89;
 }
 
+.user-name {
+  font-family: 'Montserrat', sans-serif;
+  color: #bdbdbd;
+  margin-right: 15px;
+}
+
 .nav-link {
   font-family: 'Montserrat', sans-serif;
   color: #bdbdbd;
