@@ -18,6 +18,24 @@ class App extends Component {
     this._login = this._login.bind(this);
   }
 
+  componentDidMount() {
+		axios.get('/auth/user').then(response => {
+			console.log(response.data)
+			if (!!response.data.user) {
+				console.log('THERE IS A USER')
+				this.setState({
+					loggedIn: true,
+					user: response.data.user
+				})
+			} else {
+				this.setState({
+					loggedIn: false,
+					user: null
+				})
+			}
+		})
+	}
+
   _logout(event) {
     event.preventDefault();
     axios.post('/auth/logout').then(response => {
@@ -58,7 +76,16 @@ class App extends Component {
             <Route exact path="/dashboard/home" component={Home} />
             <Route exact path="/dashboard/create" component={Create} />
             <Route exact path="/dashboard/friends" component={Friends} />
-            <Route exact path="/signin" component={Signin} />
+            {/* <Route exact path="/signin" component={Signin} /> */}
+            <Route
+					exact
+					path="/signin"
+					render={() =>
+						<Signin
+							_login={this._login}
+							_googleSignin={this._googleSignin}
+						/>}
+				/>
           </Switch>
         </div>
       </Router>
