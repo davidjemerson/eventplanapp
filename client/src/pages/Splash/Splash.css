@@ -202,3 +202,61 @@ footer {
   font-family: 'Montserrat', sans-serif;
   color: #bdbdbd;
 }
+
+/* Media Query - Max Width (991px)
+------------------------------------------------*/
+@media only screen and (max-width: 991px) {
+  .navbar-toggler {
+    display: none;
+  }
+
+  a.navbar-brand {
+    font-family: 'Montserrat', sans-serif;
+    color: #29bf89;
+    font-size: 25px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    padding: 5px 20px;
+    border: 1px solid #29bf89;
+    margin: auto;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .info-container {
+    background-color: #fff;
+    padding-top: 150px;
+    padding-bottom: 100px;
+    margin-bottom: 0;
+  }
+
+  .p-text {
+    margin-bottom: 50px;
+  }
+}
+
+@media only screen and (max-width: 522px) {
+  .lead {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 17px;
+    color: #29bf89;
+  }
+
+  .by-line {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    color: #1c2127;
+    margin-bottom: 60px;
+  }
+}
+
+@media only screen and (max-width: 402px) {
+  .display-4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    color: #fff;
+    letter-spacing: 2px;
+  }
+}
