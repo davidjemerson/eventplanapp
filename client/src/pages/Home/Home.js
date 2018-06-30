@@ -89,7 +89,7 @@ class Home extends Component {
                   <EventCard
                     key={event._id}
                     category={event.category}
-                    date={event.date}
+                    date={event.scheduledDatetime}
                     //TODO - attendees confirmed
                     //TODO - attendees total
                   />
