@@ -7,7 +7,7 @@ const Modal = props => (
       <div className="row">
         <div className="col left-side">
           <h1 className="signup-title">Welcome</h1>
-          <p className="leftBy-line">Register for an EventPlan account today.</p>
+          <p className="leftBy-line">Register for an EventPlan account.</p>
           <form onSubmit={props.onSubmit} className="ModalForm">
             <SignInForm id="firstName" type="text" placeholder="First Name" />
             <SignInForm id="lastName" type="text" placeholder="Last Name" />

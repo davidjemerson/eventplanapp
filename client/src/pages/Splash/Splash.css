@@ -222,6 +222,8 @@ footer {
   }
 }
 
+/* Media Query - Max Width (767px)
+------------------------------------------------*/
 @media only screen and (max-width: 767px) {
   .info-container {
     background-color: #fff;
@@ -235,6 +237,8 @@ footer {
   }
 }
 
+/* Media Query - Max Width (522px)
+------------------------------------------------*/
 @media only screen and (max-width: 522px) {
   .lead {
     font-family: 'Montserrat', sans-serif;
@@ -251,6 +255,8 @@ footer {
   }
 }
 
+/* Media Query - Max Width (402px)
+------------------------------------------------*/
 @media only screen and (max-width: 402px) {
   .display-4 {
     font-family: 'Montserrat', sans-serif;
