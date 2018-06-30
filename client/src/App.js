@@ -5,6 +5,7 @@ import Splash from './pages/Splash';
 import Home from './pages/Home';
 import Signin from './pages/Signin';
 import Create from './pages/Create';
+import Friends from './pages/Friends';
 
 class App extends Component {
   constructor() {
@@ -55,8 +56,9 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Splash} />
             <Route exact path="/dashboard/home" component={Home} />
-            <Route exact path="/signin" render={() =>
-            <Signin _login={this._login} _googleSignin={this._googleSignin} />} />
+            <Route exact path="/dashboard/create" component={Create} />
+            <Route exact path="/dashboard/friends" component={Friends} />
+            <Route exact path="/signin" component={Signin} />
           </Switch>
         </div>
       </Router>

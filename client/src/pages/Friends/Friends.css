@@ -14,30 +14,18 @@
 
 /* Create Container styles
 ------------------------------------------------*/
-.create-container {
+.friend-container {
   max-width: 70%;
   margin-top: 25px;
   margin-left: 25px;
   margin-bottom: 100px;
 }
 
-.create-heading {
+.friend-heading {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: 27px;
   margin-top: 0;
-}
-
-.event-type, .event-name, .event-location, .event-address, .add-friends, .friends-reqd {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-}
-
-#event-type.form-control, #event-name.form-control, #event-location.form-control, #event-address.form-control, #friends-reqd.form-control, #add-friends.form-control {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 14px;
-  margin-bottom: 20px;
 }
 
 /* Sticky Footer styles

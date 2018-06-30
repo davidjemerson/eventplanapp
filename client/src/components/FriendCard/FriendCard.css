@@ -1,0 +1,76 @@
+div.container.friend-container {
+  padding-left: 0;
+  margin-left: 0;
+  margin-bottom: 200px;
+}
+
+.friend-bg {
+  background-color: #29bf89;
+  border-radius: 0;
+  border: 1px solid #1c2127;
+  max-width: 400px;
+}
+
+.friend-name {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  border-bottom: 1px solid #1c2127;
+}
+
+.friend-body-bg {
+  background-color: #fff;
+}
+
+.email-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  margin-left: -15px;
+  margin-top: 0;
+}
+
+.user-email {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  margin-left: -15px;
+  margin-top: 5px;
+}
+
+.event-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  margin-left: -15px;
+  margin-top: 25px;
+}
+
+.user-events {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  margin-left: -15px;
+  margin-top: 0;
+}
+
+.card-month {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  margin-top: 0;
+}
+
+.card-day {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 60px;
+  margin-top: 0; 
+}
+
+.card-text {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  margin-top: 0;
+}

@@ -1,11 +1,10 @@
 //sets up the reusable Navbar component
 import React, { Component } from 'react';
-// import "./Navbar.css";
 
-class Navbar extends Component {
+class NavbarDash extends Component {
   render() {
     return (
-      <nav className="navbar navbar-expand-lg">
+      <nav className="navbar navbar-expand-lg navDash">
           <a className="navbar-brand" href="/">
             EVENTPLAN
           </a>
@@ -22,28 +21,26 @@ class Navbar extends Component {
           </button>
 
           <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
+          <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
               <li className="nav-item active">
                 <span className="nav-byline">
-                  THE BEST WAY TO PLAN
+                  
                 </span>
               </li>
             </ul>
-            <a className="nav-link" href="/signin">
-              SIGN IN
-            </a>
-            <a href="/signin">
+            <span className="user-name">
+              Welcome, propname.
+            </span>
             <button
               className="btn btn-outline-success my-2 my-sm-0"
               type="submit"
             >
-              GET STARTED
+              LOG OUT
             </button>
-            </a>
           </div>
       </nav>
     );
   }
 }
 
-export default Navbar;
+export default NavbarDash;

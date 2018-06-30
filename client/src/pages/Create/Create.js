@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Navbar from '../../components/Navbar';
+import NavbarDash from '../../components/NavbarDash';
 import Footer from '../../components/Footer';
 import Sidebar from '../../components/Sidebar';
 import CreatePage from '../../components/Create/CreatePage';
@@ -41,14 +41,14 @@ class Create extends Component {
     return (
       <div className="App Site">
         <div className="Site-Content">
-          <Navbar />
-          <div className="container">
+          <NavbarDash />
+          <div className="container-fluid">
             <div className="row">
-              <div className="col-2">
+              <div className="sidebar">
                 <Sidebar />
               </div>
-              <div className="col-10">
-                <h1>CREATE YOUR EVENT!</h1>
+              <div className="col-12 create-container">
+                <h1 className="create-heading">CREATE YOUR EVENT!</h1>
                 <hr />
                 <CreateForm />
               </div>
