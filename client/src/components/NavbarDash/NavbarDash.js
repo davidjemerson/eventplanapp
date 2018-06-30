@@ -5,7 +5,7 @@ class NavbarDash extends Component {
   render() {
     return (
       <nav className="navbar navbar-expand-lg navDash">
-          <a className="navbar-brand" href="#">
+          <a className="navbar-brand" href="/">
             EVENTPLAN
           </a>
           <button
@@ -21,31 +21,21 @@ class NavbarDash extends Component {
           </button>
 
           <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
+          <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
               <li className="nav-item active">
-                <a className="nav-link" href="#">
-                  ABOUT
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  HOW IT WORKS
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  INVITE
-                </a>
+                <span className="nav-byline">
+                  
+                </span>
               </li>
             </ul>
-            <a className="nav-link" href="#">
-              SIGN IN
-            </a>
+            <span className="user-name">
+              Welcome, propname.
+            </span>
             <button
               className="btn btn-outline-success my-2 my-sm-0"
               type="submit"
             >
-              GET STARTED
+              LOG OUT
             </button>
           </div>
       </nav>

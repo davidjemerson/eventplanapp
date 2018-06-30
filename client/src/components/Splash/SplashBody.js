@@ -8,7 +8,7 @@ export const SplashBody = props => (
 
     <div className="row content-rows">
       <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-      <i class="far fa-calendar-alt fa-5x"></i>
+      <i className="far fa-calendar-alt fa-5x"></i>
 
         <h5>PLAN</h5>
         <h6>
@@ -20,7 +20,7 @@ export const SplashBody = props => (
       </div>
 
       <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-      <i class="fas fa-users fa-5x"></i>
+      <i className="fas fa-users fa-5x"></i>
 
         <h5>INVITE</h5>
         <h6>
@@ -32,7 +32,7 @@ export const SplashBody = props => (
       </div>
 
       <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-      <i class="fas fa-magic fa-5x"></i>
+      <i className="fas fa-magic fa-5x"></i>
 
         <h5>VOTE / SCHEDULE</h5>
         <h6>

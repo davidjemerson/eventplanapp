@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Modal from '../../components/EventModal/Modal';
+//import Modal from '../../components/EventModal/Modal';
 import NavbarDash from '../../components/NavbarDash';
 import Sidebar from '../../components/Sidebar';
 import EventCard from '../../components/EventCard';

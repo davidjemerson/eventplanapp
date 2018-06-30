@@ -24,19 +24,9 @@ class Navbar extends Component {
           <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
               <li className="nav-item active">
-                <a className="nav-link" href="#">
-                  ABOUT
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  HOW IT WORKS
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  INVITE
-                </a>
+                <span className="nav-byline">
+                  THE BEST WAY TO PLAN
+                </span>
               </li>
             </ul>
             <a className="nav-link" href="/signin">

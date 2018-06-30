@@ -50,6 +50,7 @@ const CreateForm = props => (
         placeholder="Address of the Event"
         id="event-address"
       />
+
       <label className="friends-reqd" htmlFor="friends-reqd">
         How Many People Do You Need?
       </label>
