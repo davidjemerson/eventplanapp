@@ -1,6 +1,7 @@
 //sets up the reusable Event Card component
 import React from 'react';
 import './EventCard.css';
+import Moment from 'react-moment';
 
 const EventCard = props => (
   <div className="card text-white mb-3 event-card">
