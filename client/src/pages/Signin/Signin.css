@@ -222,3 +222,73 @@ input {
 .Site-Content {
   flex: 1;
 }
+
+/* Media Query - Max Width (1199px)
+------------------------------------------------*/
+@media only screen and (max-width: 1199px) {
+  .left-side {
+    background-color: #1c2127;
+    padding: 60px 0 50px 50px;
+    margin-left: 50px;
+    margin-top: 100px;
+    margin-bottom: 150px;
+  }
+  
+  .right-side {
+    background-color: #29bf89;
+    padding: 60px 0 50px 50px;
+    margin-right: 50px;
+    margin-top: 100px;
+    margin-bottom: 150px;
+  }
+}
+
+/* Media Query - Max Width (991px)
+------------------------------------------------*/
+@media only screen and (max-width: 991px) {
+  .left-side {
+    background-color: #1c2127;
+    padding: 60px 0 50px 50px;
+    margin-left: 0;
+    margin-top: 100px;
+    margin-bottom: 150px;
+  }
+  
+  .right-side {
+    background-color: #29bf89;
+    padding: 60px 0 50px 50px;
+    margin-right: 0;
+    margin-top: 100px;
+    margin-bottom: 150px;
+  }
+}
+
+/* Media Query - Max Width (767px)
+------------------------------------------------*/
+@media only screen and (max-width: 767px) {
+  .modal-bg {
+    max-width: 100%;
+  }
+
+  .left-side {
+    display: block;
+    min-width: 100%;
+    background-color: #1c2127;
+    padding: 60px 0 50px 50px;
+    margin-left: 0;
+    margin-right: 50px;
+    margin-top: 100px;
+    margin-bottom: 0;
+  }
+  
+  .right-side {
+    display: block;
+    min-width: 100%;
+    background-color: #29bf89;
+    padding: 60px 0 50px 50px;
+    margin-left: 0;
+    margin-right: 50px;
+    margin-top: 0;
+    margin-bottom: 150px;
+  }
+}
