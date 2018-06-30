@@ -80,29 +80,44 @@ class Home extends Component {
               <Sidebar />
             </div>
             <div className="col-sm-12 main-container">
-              <h1 className="attend-heading">EVENTS ATTENDING</h1>
+              <h1 className="attend-heading">EVENTS CONFIRMED</h1>
               <hr />
-              {/* //TODO --> map over only events that are ATTENDING here */}
+              {/* //DONE --> map over only events that are ATTENDING here */}
               {/* ------------------------------------------------------------------------------------------------------------------------------------------------------ */}
-              {this.state.events.map(event => {
+              {this.state.events.filter(event => event.confirmed).map(event => {
                 return (
                   <EventCard
                     key={event._id}
                     category={event.category}
-                    date={event.date}
+                    date={event.scheduledDatetime}
                     //TODO - attendees confirmed
                     //TODO - attendees total
                   />
                 );
               })}
               {/* ------------------------------------------------------------------------------------------------------------------------------------------------------ */}
-              <h1 className="pend-heading">EVENTS PENDING</h1>
+              <h1 className="pend-heading">EVENTS NOT CONFIRMED</h1>
               <hr />
-              {/* //TODO --> map over only events that are PENDING here */}
-              <EventCard />
-              <h1 className="create-heading">EVENTS CREATED</h1>
+              {/* //DONE --> map over only events that are ATTENDING here */}
+              {/* ------------------------------------------------------------------------------------------------------------------------------------------------------ */}
+              {this.state.events
+                .filter(event => !event.confirmed)
+                .map(event => {
+                  return (
+                    <EventCard
+                      key={event._id}
+                      category={event.category}
+                      date={event.scheduledDatetime}
+                      //TODO - attendees confirmed
+                      //TODO - attendees total
+                    />
+                  );
+                })}
+              {/* ------------------------------------------------------------------------------------------------------------------------------------------------------ */}
+              <h1 className="create-heading">EVENTS I'VE CREATED</h1>
               <hr />
               {/* //TODO --> map over only events that are CREATED here */}
+              <span>this is a dummy event not passed through props yet</span>
               <EventCard />
             </div>
           </div>
