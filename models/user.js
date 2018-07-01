@@ -17,16 +17,6 @@ const userSchema = new Schema({
 	photos: [],
 	events: [ {type: Schema.Types.ObjectId, ref: 'Event'} ],
 	friends: [ { type: String } ]
-	// local: {
-	// 	email: { type: String, unique: true },
-	// 	password: { type: String }
-	// },
-	// google: {
-	// 	id: { type: String },
-	// 	photos: []
-	// },
-	// firstName: { type: String },
-	// lastName: { type: String }
 });
 
 // Define schema methods
