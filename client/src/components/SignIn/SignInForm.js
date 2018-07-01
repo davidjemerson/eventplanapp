@@ -49,7 +49,9 @@ class SignInForm extends Component {
         <span>
         <p className="goog-para">Or, Sign in with Google.</p>
         </span>
-        <button className="goog-btn">Google +</button>
+        <a href="/auth/google">
+          <button className="goog-btn">Google +</button>
+        </a>
       </div>
     )
   }

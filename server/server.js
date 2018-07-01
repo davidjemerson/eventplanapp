@@ -14,14 +14,14 @@ const routes = require("../routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+app.use(passport.initialize())
+app.use(passport.session()) 
+
 app.use(morgan('dev'))
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static("client/build"));
 app.use(routes);
-
-app.use(passport.initialize())
-app.use(passport.session()) 
 
 app.use('/auth', require('../routes/auth'))
 

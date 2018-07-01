@@ -28,14 +28,18 @@ class SignUpForm extends Component {
     // TODO - validate!
     console.log(this.state.email);
     console.log(this.state.password);
-    AUTH.signUp({email: this.state.email, password: this.state.password})
+    AUTH.signUp({
+      firstName: this.state.firstName, 
+      lastName: this.state.lastName, 
+      email: this.state.email, 
+      password: this.state.password})
 			.then(response => {
 				console.log(response)
 				if (!response.data.errmsg) {
 					console.log('youre good')
-					// this.setState({
-					// 	redirectTo: '/signin'
-					// })
+					this.setState({
+						redirectTo: '/signin'
+					})
 				} else {
 					console.log('duplicate')
 				}
