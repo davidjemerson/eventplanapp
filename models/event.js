@@ -3,7 +3,8 @@ const Schema = mongoose.Schema;
 
 const attendeeSchema = new Schema({
     attendee: { type: Schema.Types.ObjectId, ref: 'User' },
-    isgoing: Boolean
+    isgoing: Boolean,
+    selectedDates: []
 });
 
 const eventSchema = new Schema({
