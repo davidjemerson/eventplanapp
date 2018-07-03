@@ -9,10 +9,12 @@ const attendeeSchema = new Schema({
 
 const eventSchema = new Schema({
   name: { type: String, required: true },
-  category: {type: String, required: true },
+  category: { type: String, required: true },
+  location: { type: String, required: true },
+  address: { type: String, required: true },
   organizer: { type: Schema.Types.ObjectId, ref: 'User' },
+  numRequired: { type: Number, required: true },
   attendees: [ attendeeSchema ],
-  potentialDatetimes: [ Date ],
   scheduledDatetime: Date,
   createdDate: { type: Date, default: Date.now },
   confirmed: { type: Boolean, default: false }
