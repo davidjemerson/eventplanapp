@@ -3,10 +3,10 @@ const router = express.Router()
 const User = require('../../models/user')
 const passport = require('../../server/passport')
 
-router.get('/auth/google',
+router.get('/google',
   passport.authenticate('google', { scope: ['https://www.googleapis.com/auth/plus.login'] }));
 
-router.get('/auth/google/callback', 
+router.get('/google/callback', 
   passport.authenticate('google', { failureRedirect: '/login' }),
   function(req, res) {
     res.redirect('/');
