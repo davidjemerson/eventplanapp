@@ -1,1 +1,2 @@
-export { default } from './CreatePage';
+export * from './Input';
+export * from './FormBtn';

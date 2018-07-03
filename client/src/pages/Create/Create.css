@@ -28,16 +28,41 @@
   margin-top: 0;
 }
 
-.event-type, .event-name, .event-location, .event-address, .add-friends, .friends-reqd {
+.event-type, .event-name, .event-date, .event-location, .event-address, .add-friends, .friends-reqd {
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   font-size: 16px;
 }
 
-#event-type.form-control, #event-name.form-control, #event-location.form-control, #event-address.form-control, #friends-reqd.form-control, #add-friends.form-control {
+#event-type, #event-name, #event-date, #event-location, #event-address, #friends-reqd, #add-friends {
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   margin-bottom: 20px;
+}
+
+.submit-btn {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  background-color: #29bf89;
+  color: #fff;
+  padding: 5px 25px;
+  border-color: #29BF89;
+  border-radius: 0px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.submit-btn:hover {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  background-color: #1c2127;
+  color: #29bf89;
+  padding: 5px 25px;
+  border-color: #fff;
+  border-radius: 0px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
 }
 
 /* Sticky Footer styles
