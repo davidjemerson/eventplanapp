@@ -9,11 +9,27 @@ mongoose.connect(
   }
 );
 
+const attendeeSeed = [
+  {
+    attendee: 'President Bill Clinton',
+    isgoing: true,
+  },
+  {
+    attendee: 'Larry Ellison - Oracle',
+    isgoing: false,
+  },
+  {
+    attendee: 'My Grandma - June Terrell',
+    isgoing: false,
+  },
+];
+
 const eventSeed = [
   {
     name: 'BBQ of Jack Fruit & Gluten Free Buns',
     category: 'food',
     organizer: 'ref',
+    attendees: attendeeSeed,
     potentialDatetimes: new Date('2018-08-17'),
     scheduledDatetime: new Date('2018-08-17'),
     createdDate: new Date(Date.now()),
@@ -23,6 +39,7 @@ const eventSeed = [
     name: 'Watch Food Documentaries and Eat Designer Popcorn',
     category: 'entertainment',
     organizer: 'ref',
+    attendees: attendeeSeed,
     potentialDatetimes: new Date('2018-07-01'),
     scheduledDatetime: new Date('2018-07-11'),
     createdDate: new Date(Date.now()),
@@ -32,6 +49,7 @@ const eventSeed = [
     name: 'Go to the Quidditch Match',
     category: 'sporting',
     organizer: 'ref',
+    attendees: attendeeSeed,
     potentialDatetimes: new Date('2018-08-17'),
     scheduledDatetime: new Date('2018-08-17'),
     createdDate: new Date(Date.now()),
@@ -40,7 +58,7 @@ const eventSeed = [
 ];
 
 db.Event.remove({})
-  .then(() => db.Event.collection.insertMany(eventSeed))
+  .then(() => db.Event.collection.insertMany(eventSeed, attendeeSeed))
   .then(data => {
     console.log(data.insertedIds.length + ' records inserted!');
     process.exit(0);

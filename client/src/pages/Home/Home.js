@@ -52,6 +52,16 @@ class Home extends Component {
       .catch(err => console.log(err));
   };
 
+  whoGoing = () => {
+    this.state.events.attendees.map(obj => {
+      if (obj.isgoing) {
+        this.setState({
+          numAttendeesConfirmed: this.state.numAttendeesConfirmed + 1,
+        });
+      }
+    });
+  };
+
   // ------------------------------------------------
   //! this is for the modal
   // when someone submits, set state back to false
@@ -91,6 +101,7 @@ class Home extends Component {
                     category={event.category}
                     date={event.scheduledDatetime}
                     //TODO - attendees confirmed
+                    attendeesConf={() => this.whoGoing()}
                     //TODO - attendees total
                   />
                 );
