@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './FriendCard.css';
 
 const FriendCard = props => (
-  <div className="container friend-container">
+  <div className="container friends-container">
     <div className="card friend-bg">
       <div className="card-header friend-name">Props friends name here</div>
       <div className="card-body friend-body-bg">
