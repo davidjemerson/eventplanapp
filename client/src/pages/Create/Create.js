@@ -32,11 +32,12 @@ class Create extends Component {
   //     .catch(err => console.log(err));
   // }
 
-
   // Add attendee to array db
   // addAttendee = newAttendee => {
   //   this.setState.push({ attendees: [...this.state.attendees, newAttendee]})
   // };
+
+  // let newAttendee = this.setState.push({ attendees: [...this.state.attendees, newAttendee]});
 
   //TODO: write handleInputChange function
   handleInputChange = event => {
@@ -51,24 +52,19 @@ class Create extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
 
-    //let newAttendee = this.state.attendees.attendeeSchema.attendee;
-    // var newStateArray = this.state.attendees.slice(',');
-    // newStateArray.push(this.state.attendees);
-    // this.setState({attendees: newStateArray});
-
-    let newArray = this.state.attendees.slice();
-    let newPerson = [];
-    newPerson.push(newArray);
-      
-      // let newAttendee = this.setState.push({ attendees: [...this.state.attendees, newAttendee]});
+    // Splitting returned attendees string into separate strings in a new array
+    let newAttendees = this.state.attendees;
+    let newAttendeeArray = newAttendees.split(' ');
+    let finalAttendees = [];
+    finalAttendees.push(newAttendeeArray);
 
       API.createEvent({
         name: this.state.name,
         category: this.state.category,
         location: this.state.location,
         address: this.state.address,
-        numRequired: this.state.numRequired,
-        attendees: newPerson
+        numRequired: this.state.numrequired,
+        attendees: finalAttendees
       })
       .catch(err => console.log(err));
   };
@@ -88,12 +84,14 @@ class Create extends Component {
                 <hr />
                 <form>
                 <label className="event-type">Event Category</label>
-                <Input
-                  value={this.state.category}
-                  onChange={this.handleInputChange}
-                  name="category"
-                  placeholder="What Type of Event?" id="event-type"
-                />
+                  <div className="form-group">
+                    <select value={this.state.category} onChange={this.handleInputChange} name='category' className='form-control' id='event-type'>
+                      <option category="restaurants">Restaurants</option>
+                      <option category="bars">Bars</option>
+                      <option category="concerts">Concerts</option>
+                      <option category="movies">Movies</option>
+                    </select>
+                  </div>
                 <label className="event-name">Event Name</label>
                 <Input
                   value={this.state.name}
@@ -101,7 +99,6 @@ class Create extends Component {
                   name="name"
                   placeholder="Name Your Awesome Event" id="event-name"
                 />
-
                 <label className="event-date">Event Date</label>
                 <Input
                   value={this.state.scheduledDatetime}
@@ -109,7 +106,6 @@ class Create extends Component {
                   name="scheduledDatetime"
                   placeholder="When Is This Happening?" id="event-date"
                 />
-
                 <label className="event-location">Where's Your Event</label>
                 <Input
                   value={this.state.location}
@@ -125,13 +121,20 @@ class Create extends Component {
                   placeholder="Address of the Event" id="event-address"
                 />
                 <label className="friends-reqd">How Many People Do You Need?</label>
-                <Input
-                  value={this.state.numRequired}
-                  onChange={this.handleInputChange}
-                  name="numRequired"
-                  placeholder="Enter Up To 10 People"
-                  id="friends-reqd"
-                />
+                  <div className="form-group">
+                    <select value={this.state.numrequired} onChange={this.handleInputChange} name='numrequired' className='form-control' id='friends-reqd'>
+                      <option numrequired="1">1</option>
+                      <option numrequired="2">2</option>
+                      <option numrequired="3">3</option>
+                      <option numrequired="4">4</option>
+                      <option numrequired="5">5</option>
+                      <option numrequired="6">6</option>
+                      <option numrequired="7">7</option>
+                      <option numrequired="8">8</option>
+                      <option numrequired="9">9</option>
+                      <option numrequired="10">10</option>
+                    </select>
+                  </div>
                 <label className="friends-reqd">Wanna Invite Some People?</label>
                 <Input
                   value={this.state.attendees}
@@ -157,3 +160,22 @@ class Create extends Component {
 export default Create;
 
 // () => this.state.addAttendee()
+
+// Old input for number of friends required
+/*<Input
+    value={this.state.numRequired}
+    onChange={this.handleInputChange}
+    name="numRequired"
+    placeholder="Enter Up To 10 People"
+    id="friends-reqd"
+  /> */
+
+// Old input for the category
+ /* <Input
+    value={this.state.category}
+    onChange={this.handleInputChange}
+    name="category"
+    placeholder="What Type of Event?" id="event-type"
+  /> */
+
+
