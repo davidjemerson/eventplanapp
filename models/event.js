@@ -8,12 +8,12 @@ const attendeeSchema = new Schema({
 });
 
 const eventSchema = new Schema({
-  name: { type: String, required: true },
-  category: { type: String, required: true },
-  location: { type: String, required: true },
-  address: { type: String, required: true },
+  name: { type: String, required: false },
+  category: { type: String, required: false },
+  location: { type: String, required: false },
+  address: { type: String, required: false },
   organizer: { type: Schema.Types.ObjectId, ref: 'User' },
-  numRequired: { type: Number, required: true },
+  numRequired: { type: Number, required: false },
   attendees: [ attendeeSchema ],
   scheduledDatetime: Date,
   createdDate: { type: Date, default: Date.now },
