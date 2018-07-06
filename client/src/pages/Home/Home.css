@@ -12,6 +12,10 @@
   padding-bottom: 25px;
 }
 
+.mobile-nav {
+  display: none;
+}
+
 a.navbar-brand {
   font-family: 'Montserrat', sans-serif;
   color: #29bf89;
@@ -20,17 +24,6 @@ a.navbar-brand {
   letter-spacing: 1px;
   padding: 5px 20px;
   border: 1px solid #29bf89;
-}
-
-.nav-link {
-  font-family: 'Montserrat', sans-serif;
-  color: #bdbdbd;
-  font-weight: 500;
-  letter-spacing: 1px;
-}
-
-.nav-link:hover {
-  color: #29bf89;
 }
 
 .btn {
@@ -102,6 +95,25 @@ div.sidebar {
 
 .Site-Content {
   flex: 1;
+}
+
+/* Media Query - Max Width (991px)
+------------------------------------------------*/
+@media only screen and (max-width: 991px) {
+  .navDash a.navbar-brand {
+    margin-left: 0;
+  }
+  
+  .mobile-nav {
+    display: block;
+    float: right;
+  }
+
+  .logout-icon {
+    font-size: 28px;
+    padding: 10px;
+    color: #29bf89;
+  }
 }
 
 /* Media Query - Max Width (948px)

@@ -8,18 +8,6 @@ class NavbarDash extends Component {
           <a className="navbar-brand" href="/">
             EVENTPLAN
           </a>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarTogglerDemo02"
-            aria-controls="navbarTogglerDemo02"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon" />
-          </button>
-
           <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
               <li className="nav-item active">
@@ -38,9 +26,18 @@ class NavbarDash extends Component {
               LOG OUT
             </button>
           </div>
+
+          {/* Mobile nav for smaller screens */}
+          <div className="mobile-nav">
+            <a href="/"><i className="fas fa-sign-out-alt logout-icon"></i></a>
+          </div>
       </nav>
     );
   }
 }
 
 export default NavbarDash;
+
+/* <span className="user-name">
+  Welcome, propname.
+</span> */

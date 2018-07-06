@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 class NavbarSignin extends Component {
   render() {
     return (
-      <nav className="navbar navbar-expand-lg navDash">
+      <nav className="navbar navbar-expand-lg navSign">
           <a className="navbar-brand" href="/">
             EVENTPLAN
           </a>
