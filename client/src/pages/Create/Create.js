@@ -55,8 +55,8 @@ class Create extends Component {
     // Splitting returned attendees string into separate strings in a new array
     let newAttendees = this.state.attendees;
     let newAttendeeArray = newAttendees.split(' ');
-    let finalAttendees = [];
-    finalAttendees.push(newAttendeeArray);
+    // let finalAttendees = [];
+    // finalAttendees.push(newAttendeeArray);
 
       API.createEvent({
         name: this.state.name,
@@ -64,7 +64,7 @@ class Create extends Component {
         location: this.state.location,
         address: this.state.address,
         numRequired: this.state.numrequired,
-        attendees: finalAttendees
+        attendees: newAttendeeArray
       })
       .catch(err => console.log(err));
   };
