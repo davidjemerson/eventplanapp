@@ -4,7 +4,7 @@ import './EventCard.css';
 import Moment from 'react-moment';
 
 const EventCard = props => (
-  <div className="card text-white mb-3 event-card" onClick={props.modal}>
+  <div className="card text-white mb-3 event-card">
     <div className="card-header">{props.category}</div>
     <div className="card-body">
       <h5 className="card-month">
@@ -14,6 +14,13 @@ const EventCard = props => (
         <Moment format="D">{props.date}</Moment>
       </h6>
       <p className="card-text">2 of 7 Friends Going</p>
+      <button
+        onClick={e => {
+          props.handleClick(props.event);
+        }}
+      >
+        Click Me
+      </button>
     </div>
   </div>
 );

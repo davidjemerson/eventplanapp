@@ -20,14 +20,18 @@ class Home extends Component {
     eventDate: '',
     confirmed: false,
     open: false,
-  };
-
-  onOpenModal = () => {
-    this.setState({ open: true });
+    selectedEvent: {
+      name: '',
+    },
   };
 
   onCloseModal = () => {
     this.setState({ open: false });
+  };
+
+  showModal = event => {
+    this.setState({ selectedEvent: event, open: true });
+    // console.log(event);
   };
 
   // when component mounts, load all events and save them to this.state.events
@@ -38,7 +42,7 @@ class Home extends Component {
   // load all the events and set them to this.state.events
   loadEvents = () => {
     API.getAllEvents()
-      .then(res =>
+      .then(res => {
         this.setState({
           events: res.data,
           name: '',
@@ -48,8 +52,8 @@ class Home extends Component {
           numAttendeesConfirmed: 0,
           eventDate: '',
           confirmed: false,
-        })
-      )
+        });
+      })
       .catch(err => console.log(err));
   };
 
@@ -76,11 +80,9 @@ class Home extends Component {
                       id={event._id}
                       category={event.category}
                       date={event.scheduledDatetime}
-                      modal={() => this.onOpenModal()}
+                      event={event}
+                      handleClick={this.showModal}
                     />
-                    <Modal open={open} onClose={this.onCloseModal} center>
-                      <ModalInfo name={event.name} />
-                    </Modal>
                   </div>
                 );
               })}
@@ -98,6 +100,8 @@ class Home extends Component {
                       key={event._id}
                       category={event.category}
                       date={event.scheduledDatetime}
+                      event={event}
+                      handleClick={this.showModal}
                       //TODO - attendees confirmed
                       //TODO - attendees total
                     />
@@ -114,6 +118,8 @@ class Home extends Component {
                       key={event._id}
                       category={event.category}
                       date={event.scheduledDatetime}
+                      event={event}
+                      handleClick={this.showModal}
                       //TODO - attendees confirmed
                       //TODO - attendees total
                     />
@@ -123,6 +129,9 @@ class Home extends Component {
           </div>
         </div>
         <Footer />
+        <Modal open={open} onClose={this.onCloseModal} center>
+          <ModalInfo event={this.state.selectedEvent} />
+        </Modal>`
       </div>
     );
   }
