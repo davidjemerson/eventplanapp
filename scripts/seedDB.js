@@ -9,6 +9,23 @@ mongoose.connect(
   }
 );
 
+const userSeed = [
+  {
+    firstName: 'Ayra',
+    lastName: 'Stark',
+    local: {
+      email: 'yourdeath@winterfell.com'
+    }
+  },
+  {
+    firstName: 'Jon',
+    lastName: 'Snow',
+    local: {
+      email: 'ilovedanyreus@drogon.com'
+    },
+  }
+];
+
 const attendeeSeed = [
   {
     attendee: 'President Bill Clinton',
@@ -59,6 +76,17 @@ const eventSeed = [
 
 db.Event.remove({})
   .then(() => db.Event.collection.insertMany(eventSeed, attendeeSeed))
+  .then(data => {
+    console.log(data.insertedIds.length + ' records inserted!');
+    process.exit(0);
+  })
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
+
+  db.User.remove({})
+  .then(() => db.User.collection.insertMany(userSeed))
   .then(data => {
     console.log(data.insertedIds.length + ' records inserted!');
     process.exit(0);
