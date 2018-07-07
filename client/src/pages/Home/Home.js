@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Modal from 'react-responsive-modal';
+import ModalInfo from '../../components/EventModal/Modal';
 import NavbarDash from '../../components/NavbarDash';
 import Sidebar from '../../components/Sidebar';
 import EventCard from '../../components/EventCard';
@@ -24,6 +25,7 @@ class Home extends Component {
   onOpenModal = () => {
     this.setState({ open: true });
   };
+
   onCloseModal = () => {
     this.setState({ open: false });
   };
@@ -51,16 +53,6 @@ class Home extends Component {
       .catch(err => console.log(err));
   };
 
-  whoGoing = () => {
-    this.state.events.attendees.map(obj => {
-      if (obj.isgoing) {
-        this.setState({
-          numAttendeesConfirmed: this.state.numAttendeesConfirmed + 1,
-        });
-      }
-    });
-  };
-
   render() {
     const { open } = this.state;
     return (
@@ -78,25 +70,21 @@ class Home extends Component {
               {/* ------------------------------------------------------------------------------------------------------------------------------------------------------ */}
               {this.state.events.filter(event => event.confirmed).map(event => {
                 return (
-                  <EventCard
-                    key={event._id}
-                    category={event.category}
-                    date={event.scheduledDatetime}
-                    //TODO - attendees confirmed
-                    attendeesConf={() => this.whoGoing()}
-                    //TODO - attendees total
-                    modal={this.onOpenModal}
-                  />
+                  <div>
+                    <EventCard
+                      key={event._id}
+                      id={event._id}
+                      category={event.category}
+                      date={event.scheduledDatetime}
+                      modal={() => this.onOpenModal()}
+                    />
+                    <Modal open={open} onClose={this.onCloseModal} center>
+                      <ModalInfo name={event.name} />
+                    </Modal>
+                  </div>
                 );
               })}
-              <Modal open={open} onClose={this.onCloseModal} center>
-                <h2>Simple centered modal</h2>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam pulvinar risus non risus hendrerit venenatis.
-                  Pellentesque sit amet hendrerit risus, sed porttitor quam.
-                </p>
-              </Modal>
+
               {/* ------------------------------------------------------------------------------------------------------------------------------------------------------ */}
               <h1 className="pend-heading">EVENTS NOT CONFIRMED</h1>
               <hr />
