@@ -1,8 +1,11 @@
 .event-card {
-  max-width: 16rem;
+  width: 15rem;
   text-align: center;
   background-color: #29bf89;
   border-radius: 0;
+  margin-right: 30px;
+  margin-top: 10px;
+  float: left;
 }
 
 .card-header {
@@ -30,4 +33,244 @@
   font-weight: 500;
   font-size: 16px;
   margin-top: 0;
+}
+
+/* Media Query - Max Width (1214px)
+------------------------------------------------*/
+@media only screen and (max-width: 1214px) {
+  .event-card {
+    width: 15rem;
+    margin-right: 20px;
+    float: left;
+  }
+}
+
+/* Media Query - Max Width (1172px)
+------------------------------------------------*/
+@media only screen and (max-width: 1172px) {
+  .event-card {
+    width: 14rem;
+    margin-right: 20px;
+    float: left;
+  }
+}
+
+/* Media Query - Max Width (1103px)
+------------------------------------------------*/
+@media only screen and (max-width: 1103px) {
+  .event-card {
+    width: 14rem;
+    margin-right: 15px;
+    float: left;
+  }
+}
+
+/* Media Query - Max Width (1082px)
+------------------------------------------------*/
+@media only screen and (max-width: 1082px) {
+  .event-card {
+    width: 14rem;
+    margin-right: 10px;
+    float: left;
+  }
+}
+
+/* Media Query - Max Width (1060px)
+------------------------------------------------*/
+@media only screen and (max-width: 1060px) {
+  .event-card {
+    width: 17rem;
+    margin-right: 30px;
+    float: left;
+  }
+}
+
+/* Media Query - Max Width (948px)
+------------------------------------------------*/
+@media only screen and (max-width: 948px) {
+  .event-card {
+    width: 17rem;
+    margin-right: 20px;
+    float: left;
+  }
+}
+
+/* Media Query - Max Width (931px)
+------------------------------------------------*/
+@media only screen and (max-width: 931px) {
+  .event-card {
+    width: 17rem;
+    margin-right: 15px;
+    float: left;
+  }
+}
+
+/* Media Query - Max Width (916px)
+------------------------------------------------*/
+@media only screen and (max-width: 916px) {
+  .event-card {
+    width: 17rem;
+    margin-right: 10px;
+    float: left;
+  }
+}
+
+/* Media Query - Max Width (901px)
+------------------------------------------------*/
+@media only screen and (max-width: 901px) {
+  .event-card {
+    width: 16rem;
+    margin-right: 20px;
+    float: left;
+  }
+}
+
+/* Media Query - Max Width (883px)
+------------------------------------------------*/
+@media only screen and (max-width: 883px) {
+  .event-card {
+    width: 14rem;
+    margin-right: 20px;
+    float: left;
+  }
+}
+
+/* Media Query - Max Width (863px)
+------------------------------------------------*/
+@media only screen and (max-width: 863px) {
+  .event-card {
+    width: 17rem;
+    margin-right: 20px;
+    float: left;
+  }
+}
+
+/* Media Query - Max Width (754px)
+------------------------------------------------*/
+@media only screen and (max-width: 754px) {
+  .event-card {
+    width: 17rem;
+    margin-right: 15px;
+    float: left;
+  }
+}
+
+/* Media Query - Max Width (742px)
+------------------------------------------------*/
+@media only screen and (max-width: 742px) {
+  .event-card {
+    width: 16rem;
+    margin-right: 20px;
+    float: left;
+  }
+}
+
+/* Media Query - Max Width (716px)
+------------------------------------------------*/
+@media only screen and (max-width: 716px) {
+  .event-card {
+    width: 16rem;
+    margin-right: 15px;
+    float: left;
+  }
+}
+
+/* Media Query - Max Width (704px)
+------------------------------------------------*/
+@media only screen and (max-width: 704px) {
+  .event-card {
+    width: 16rem;
+    margin-right: 10px;
+    float: left;
+  }
+}
+
+/* Media Query - Max Width (692px)
+------------------------------------------------*/
+@media only screen and (max-width: 692px) {
+  .event-card {
+    width: 15rem;
+    margin-right: 20px;
+    float: left;
+  }
+}
+
+/* Media Query - Max Width (677px)
+------------------------------------------------*/
+@media only screen and (max-width: 677px) {
+  .event-card {
+    width: 15rem;
+    margin-right: 15px;
+    float: left;
+  }
+}
+
+/* Media Query - Max Width (665px)
+------------------------------------------------*/
+@media only screen and (max-width: 665px) {
+  .event-card {
+    width: 15rem;
+    margin-right: 10px;
+    float: left;
+  }
+}
+
+/* Media Query - Max Width (653px)
+------------------------------------------------*/
+@media only screen and (max-width: 653px) {
+  .event-card {
+    width: 25rem;
+    margin-right: 10px;
+    float: left;
+  }
+}
+
+/* Media Query - Max Width (580px)
+------------------------------------------------*/
+@media only screen and (max-width: 580px) {
+  .event-card {
+    width: 22rem;
+    margin-right: 10px;
+    float: left;
+  }
+}
+
+/* Media Query - Max Width (525px)
+------------------------------------------------*/
+@media only screen and (max-width: 525px) {
+  .event-card {
+    width: 20rem;
+    margin-right: 10px;
+    float: left;
+  }
+}
+
+/* Media Query - Max Width (492px)
+------------------------------------------------*/
+@media only screen and (max-width: 492px) {
+  .event-card {
+    width: 18rem;
+    margin-right: 10px;
+    float: left;
+  }
+}
+
+/* Media Query - Max Width (460px)
+------------------------------------------------*/
+@media only screen and (max-width: 460px) {
+  .event-card {
+    width: 17rem;
+    margin-right: 10px;
+    float: left;
+  }
+}
+
+/* Media Query - Max Width (434px)
+------------------------------------------------*/
+@media only screen and (max-width: 434px) {
+  .event-card {
+    width: 14rem;
+    margin-right: 10px;
+    float: left;
+  }
 }

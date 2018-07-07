@@ -116,9 +116,19 @@ class Home extends Component {
               {/* ------------------------------------------------------------------------------------------------------------------------------------------------------ */}
               <h1 className="create-heading">EVENTS I'VE CREATED</h1>
               <hr />
-              {/* //TODO --> map over only events that are CREATED here */}
-              <span>this is a dummy event not passed through props yet</span>
-              <EventCard />
+              {this.state.events
+                .filter(event => !event.confirmed)
+                .map(event => {
+                  return (
+                    <EventCard
+                      key={event._id}
+                      category={event.category}
+                      date={event.scheduledDatetime}
+                      //TODO - attendees confirmed
+                      //TODO - attendees total
+                    />
+                  );
+                })}
             </div>
           </div>
         </div>
