@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Modal from '../../components/SignIn/Modal';
-import NavbarDash from '../../components/NavbarDash';
+import NavbarSignin from '../../components/NavbarSignin';
 import Footer from '../../components/Footer';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import './Signin.css';
@@ -24,12 +24,12 @@ class Signin extends Component {
     let child;
 
     if (this.state.mounted) {
-      child = <Modal onSubmit={this.handleSubmit} />;
+      child = <Modal _login={this.props._login} _googleSignin={this.props._googleSignin} onSubmit={this.handleSubmit} />;
     }
     return (
       <div className="App Site bg-img">
         <div className="Site-Content">
-          <NavbarDash />
+          <NavbarSignin />
           <ReactCSSTransitionGroup
             transitionName="example"
             transitionEnterTimeout={500}

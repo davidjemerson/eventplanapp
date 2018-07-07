@@ -1,6 +1,6 @@
 /* Navbar styles
 ------------------------------------------------*/
-.navDash {
+.navSign {
   width: 100%;
   background-color: #1c2127;
 }
@@ -114,6 +114,7 @@ a.navbar-brand {
   border-color: #fff;
   border-radius: 0;
   margin-top: 20px;
+  cursor: pointer;
 }
 
 .signin-para {
@@ -145,6 +146,7 @@ a.navbar-brand {
   border-radius: 0px;
   margin-top: 20px;
   margin-bottom: 10px;
+  cursor: pointer;
 }
 
 .goog-para {
@@ -174,6 +176,7 @@ a.navbar-brand {
   border-color: #fff;
   border-radius: 0px;
   margin-bottom: 10px;
+  cursor: pointer;
 }
 
 div.Input {
