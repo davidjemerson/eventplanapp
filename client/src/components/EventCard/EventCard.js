@@ -4,7 +4,7 @@ import './EventCard.css';
 import Moment from 'react-moment';
 
 const EventCard = props => (
-  <div className="card text-white mb-3 event-card">
+  <div className="card text-white mb-3 event-card" onClick={props.modal}>
     <div className="card-header">{props.category}</div>
     <div className="card-body">
       <h5 className="card-month">

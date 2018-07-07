@@ -1,10 +1,10 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const attendeeSchema = new Schema({
-    attendee: { type: Schema.Types.ObjectId, ref: 'User' },
-    isgoing: Boolean,
-    selectedDates: []
+  attendee: { type: Schema.Types.ObjectId, ref: 'User' },
+  isgoing: Boolean,
+  selectedDates: [],
 });
 
 const eventSchema = new Schema({
@@ -17,9 +17,9 @@ const eventSchema = new Schema({
   attendees: { type: Array, required: true },
   scheduledDatetime: Date,
   createdDate: { type: Date, default: Date.now },
-  confirmed: { type: Boolean, default: false }
+  confirmed: { type: Boolean, default: false },
 });
 
-const Event = mongoose.model( "Event", eventSchema );
+const Event = mongoose.model('Event', eventSchema);
 
 module.exports = Event;

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-//import Modal from '../../components/EventModal/Modal';
+import Modal from 'react-responsive-modal';
+import ModalInfo from '../../components/EventModal/Modal';
 import NavbarDash from '../../components/NavbarDash';
 import Sidebar from '../../components/Sidebar';
 import EventCard from '../../components/EventCard';
@@ -18,20 +19,20 @@ class Home extends Component {
     numAttendeesConfirmed: 0,
     eventDate: '',
     confirmed: false,
+    open: false,
+  };
 
-    // ------------------------------------------------
-    //! this is for the modal
-    //? mounted: false
-    // ------------------------------------------------
+  onOpenModal = () => {
+    this.setState({ open: true });
+  };
+
+  onCloseModal = () => {
+    this.setState({ open: false });
   };
 
   // when component mounts, load all events and save them to this.state.events
   componentDidMount() {
     this.loadEvents();
-    // ------------------------------------------------
-    //! this is for the modal
-    //? this.setState({ mounted: true });
-    // ------------------------------------------------
   }
 
   // load all the events and set them to this.state.events
@@ -52,25 +53,8 @@ class Home extends Component {
       .catch(err => console.log(err));
   };
 
-  // ------------------------------------------------
-  //! this is for the modal
-  // when someone submits, set state back to false
-  /* handleSubmit(e) {
-    this.setState({ mounted: false });
-    e.preventDefault();
-  } */
-  // ------------------------------------------------
-
   render() {
-    let child;
-
-    // ------------------------------------------------
-    //! this for modal
-    /* if (this.state.mounted) {
-      child = <Modal onSubmit={this.handleSubmit} />;
-    } */
-    // ------------------------------------------------
-
+    const { open } = this.state;
     return (
       <div>
         <NavbarDash />
@@ -86,15 +70,21 @@ class Home extends Component {
               {/* ------------------------------------------------------------------------------------------------------------------------------------------------------ */}
               {this.state.events.filter(event => event.confirmed).map(event => {
                 return (
-                  <EventCard
-                    key={event._id}
-                    category={event.category}
-                    date={event.scheduledDatetime}
-                    //TODO - attendees confirmed
-                    //TODO - attendees total
-                  />
+                  <div>
+                    <EventCard
+                      key={event._id}
+                      id={event._id}
+                      category={event.category}
+                      date={event.scheduledDatetime}
+                      modal={() => this.onOpenModal()}
+                    />
+                    <Modal open={open} onClose={this.onCloseModal} center>
+                      <ModalInfo name={event.name} />
+                    </Modal>
+                  </div>
                 );
               })}
+
               {/* ------------------------------------------------------------------------------------------------------------------------------------------------------ */}
               <h1 className="pend-heading">EVENTS NOT CONFIRMED</h1>
               <hr />
