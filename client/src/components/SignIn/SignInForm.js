@@ -25,7 +25,7 @@ class SignInForm extends Component {
 		console.log('handleSubmit')
 		this.props._login(this.state.email, this.state.password)
 		this.setState({
-			redirectTo: '/'
+			redirectTo: '/dashboard/home'
 		})
 	}
   

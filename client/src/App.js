@@ -68,24 +68,36 @@ class App extends Component {
   }
 
   render() {
+    let splash
+    let home
+    let create
+    let friends
+    let signin
+
+    if (this.state.loggedIn) {
+      console.log("App rendering logged in");
+      splash = <Route exact path="/" render={() => <Splash loggedIn={this.state.loggedIn} user={this.state.user} />}/>
+      home = <Route exact path="/dashboard/home" render={() => <Home loggedIn={this.state.loggedIn} user={this.state.user} />}/>
+      create = <Route exact path="/dashboard/create" render={() => <Create loggedIn={this.state.loggedIn} user={this.state.user} />}/>
+      friends = <Route exact path="/dashboard/friends" render={() => <Friends loggedIn={this.state.loggedIn} user={this.state.user} />}/>
+      signin = <Route exact path="/signin" render={() => <Signin loggedIn={this.state.loggedIn} user={this.state.user} _logout={this._logout} />}/>
+    } else {
+      console.log("App rendering logged out");
+      splash = <Route exact path="/" component={Splash} />
+      home = <Route exact path="/dashboard/home" component={Home} />
+      create = <Route exact path="/dashboard/create" component={Create} />
+      friends = <Route exact path="/dashboard/friends" component={Friends} />
+      signin = <Route exact path="/signin" render={() => <Signin _login={this._login} _googleSignin={this._googleSignin} />}/>
+    }
     return (
       <Router>
         <div>
           <Switch>
-            <Route exact path="/" component={Splash} />
-            <Route exact path="/dashboard/home" component={Home} />
-            <Route exact path="/dashboard/create" component={Create} />
-            <Route exact path="/dashboard/friends" component={Friends} />
-            {/* <Route exact path="/signin" component={Signin} /> */}
-            <Route
-					exact
-					path="/signin"
-					render={() =>
-						<Signin
-							_login={this._login}
-							_googleSignin={this._googleSignin}
-						/>}
-				/>
+            {splash}
+            {home}
+            {create}
+            {friends}
+            {signin}
           </Switch>
         </div>
       </Router>
