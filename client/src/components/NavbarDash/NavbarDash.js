@@ -3,6 +3,12 @@ import React, { Component } from 'react';
 
 class NavbarDash extends Component {
   render() {
+    let user
+    if (this.props.loggedIn) {
+      user = this.props.user.firstName
+    } else {
+      user = "No User"
+    }
     return (
       <nav className="navbar navbar-expand-lg navDash">
           <a className="navbar-brand" href="/">
@@ -17,7 +23,7 @@ class NavbarDash extends Component {
               </li>
             </ul>
             <span className="user-name">
-              Welcome, propname.
+              Welcome, {user}.
             </span>
             <button
               className="btn btn-outline-success my-2 my-sm-0"
