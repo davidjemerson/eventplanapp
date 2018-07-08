@@ -1,5 +1,5 @@
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy
-const User = require('../../models/user')
+const User = require('../db/models/user')
 
 const strategy = new GoogleStrategy(
 	{
