@@ -14,16 +14,37 @@ const userSeed = [
     firstName: 'Ayra',
     lastName: 'Stark',
     local: {
-      email: 'yourdeath@winterfell.com'
+      email: 'needle@winterfell.com'
     }
   },
   {
     firstName: 'Jon',
     lastName: 'Snow',
     local: {
-      email: 'ilovedanyreus@drogon.com'
-    },
-  }
+      email: 'ilovedany@drogon.com'
+    }
+  },
+  {
+    firstName: 'Tyrion',
+    lastName: 'Lannister',
+    local: {
+      email: 'survivor@westeros.com'
+    }
+  },
+  {
+    firstName: 'The',
+    lastName: 'Hound',
+    local: {
+      email: 'badass@westeros.com'
+    }
+  },
+  {
+    firstName: 'Jamie',
+    lastName: 'Lannister',
+    local: {
+      email: 'slayer@westeros.com'
+    }
+  },
 ];
 
 const attendeeSeed = [
@@ -44,30 +65,39 @@ const attendeeSeed = [
 const eventSeed = [
   {
     name: 'BBQ of Jack Fruit & Gluten Free Buns',
-    category: 'food',
+    category: 'Restaurant',
+    location: 'Farmers Market',
+    address: '7800 Main Street, Overland Park',
     organizer: 'ref',
-    attendees: attendeeSeed,
-    potentialDatetimes: new Date('2018-08-17'),
+    numRequired: 6,
+    attendees: ['Jon', 'Joe', 'Jill', 'Arya', 'Sansa', 'Ned'],
+    // potentialDatetimes: new Date('2018-08-17'),
     scheduledDatetime: new Date('2018-08-17'),
     createdDate: new Date(Date.now()),
     confirmed: false,
   },
   {
     name: 'Watch Food Documentaries and Eat Designer Popcorn',
-    category: 'entertainment',
+    category: 'Entertainment',
+    location: 'Toms House',
+    address: '4545 Boulevard, KCMO',
     organizer: 'ref',
-    attendees: attendeeSeed,
-    potentialDatetimes: new Date('2018-07-01'),
+    numRequired: 4,
+    attendees: ['Tom', 'Kerry', 'Jackie', 'Ben'],
+    // potentialDatetimes: new Date('2018-07-01'),
     scheduledDatetime: new Date('2018-07-11'),
     createdDate: new Date(Date.now()),
     confirmed: true,
   },
   {
     name: 'Go to the Quidditch Match',
-    category: 'sporting',
+    category: 'Sports',
+    location: 'Hogwarts',
+    address: '9.75 London, England',
     organizer: 'ref',
-    attendees: attendeeSeed,
-    potentialDatetimes: new Date('2018-08-17'),
+    numRequired: 10,
+    attendees: ['Harry', 'Ron', 'Hermione', 'Fred', 'George', 'Percy', 'Bill', 'Luna', 'Nevelle', 'Ginny'],
+    // potentialDatetimes: new Date('2018-08-17'),
     scheduledDatetime: new Date('2018-08-17'),
     createdDate: new Date(Date.now()),
     confirmed: true,

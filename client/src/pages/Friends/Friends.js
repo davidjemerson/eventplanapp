@@ -18,7 +18,6 @@ class Friends extends Component {
 
   componentDidMount() {
     this.loadFriends();
-    console.log(this.state.friends);
   }
 
   loadFriends = () => {
@@ -49,7 +48,6 @@ class Friends extends Component {
               <div className="col-12 friend-container">
                 <h1 className="friend-heading">FRIENDS</h1>
                 <hr />
-                {/* //TODO we'll have to map over our friends here */}
                 {this.state.friends.map(friend => {
                   return (
                     <FriendCard 

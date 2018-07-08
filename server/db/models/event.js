@@ -14,7 +14,7 @@ const eventSchema = new Schema({
   address: { type: String, required: true },
   organizer: { type: Schema.Types.ObjectId, ref: 'User' },
   numRequired: { type: Number, required: true },
-  attendees: { type: Array, required: true },
+  attendees: { type: Array, required: false },
   scheduledDatetime: Date,
   createdDate: { type: Date, default: Date.now },
   confirmed: { type: Boolean, default: false },
