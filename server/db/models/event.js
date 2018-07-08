@@ -12,7 +12,7 @@ const eventSchema = new Schema({
   category: { type: String, required: false },
   location: { type: String, required: true },
   address: { type: String, required: true },
-  organizer: { type: Schema.Types.ObjectId, ref: 'User' },
+  organizer: { type: Schema.Types.ObjectId, ref: 'User', required: true },
   numRequired: { type: Number, required: true },
   // attendees: { type: Array, required: true },
   scheduledDatetime: { type: Date, required: true },
