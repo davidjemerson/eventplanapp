@@ -5,6 +5,7 @@ import Sidebar from '../../components/Sidebar';
 import API from '../../utils/API';
 // import CreateForm from '../../components/Create/CreateForm';
 import { Input, FormBtn } from '../../components/Create';
+import Moment from 'react-moment';
 
 import './Create.css';
 
@@ -13,6 +14,7 @@ class Create extends Component {
     search: '',
     category: '',
     name: '',
+    scheduledDatetime: '',
     location: '',
     address: '',
     numRequired: '',
@@ -50,11 +52,12 @@ class Create extends Component {
   // TODO: write handleFormSubmit function
   // TODO: finish connecting the rest of the input fields from the create event form page
   handleFormSubmit = event => {
+    console.log('user id: ' + this.props.user._id);
     event.preventDefault();
 
     // Splitting returned attendees string into separate strings in a new array
-    let newAttendees = this.state.attendees;
-    let newAttendeeArray = newAttendees.split(' ');
+    // let newAttendees = this.state.attendees;
+    // let newAttendeeArray = newAttendees.split(' ');
     // let finalAttendees = [];
     // finalAttendees.push(newAttendeeArray);
 
@@ -62,18 +65,28 @@ class Create extends Component {
         name: this.state.name,
         category: this.state.category,
         location: this.state.location,
-        address: this.state.address,
-        numRequired: this.state.numrequired,
-        attendees: newAttendeeArray
+        scheduledDatetime: this.state.scheduledDatetime,
+        organizer: this.props.user._id
+        // address: this.state.address,
+        // numRequired: this.state.numrequired,
+        // attendees: newAttendeeArray
       })
       .catch(err => console.log(err));
   };
 
   render() {
+    let navbar
+    if (this.props.loggedIn) {
+      console.log("rendering the logged in dash");
+      navbar = <NavbarDash updateUser={this.props.updateUser} loggedIn={this.props.loggedIn} user={this.props.user} />
+    } else {
+      console.log("rendering the not logged in dash");
+      navbar = <NavbarDash />
+    }
     return (
       <div className="App Site">
         <div className="Site-Content">
-          <NavbarDash />
+          {navbar}
           <div className="container-fluid">
             <div className="row">
               <div className="sidebar">
@@ -99,7 +112,7 @@ class Create extends Component {
                   name="name"
                   placeholder="Name Your Awesome Event" id="event-name"
                 />
-                <label className="event-date">Event Date</label>
+                <label className="event-date">Event Date ( MM/DD/YYYY )</label>
                 <Input
                   value={this.state.scheduledDatetime}
                   onChange={this.handleInputChange}
@@ -122,7 +135,7 @@ class Create extends Component {
                 />
                 <label className="friends-reqd">How Many People Do You Need?</label>
                   <div className="form-group">
-                    <select value={this.state.numrequired} onChange={this.handleInputChange} name='numrequired' className='form-control' id='friends-reqd'>
+                    <select value={this.state.numrequired} onChange={this.handleInputChange} name='numRequired' className='form-control' id='friends-reqd'>
                       <option numrequired="1">1</option>
                       <option numrequired="2">2</option>
                       <option numrequired="3">3</option>
