@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const db = require('../models');
+const db = require('../server/db/models');
 mongoose.Promise = global.Promise;
 
 mongoose.connect(
@@ -14,36 +14,36 @@ const userSeed = [
     firstName: 'Ayra',
     lastName: 'Stark',
     local: {
-      email: 'needle@winterfell.com'
-    }
+      email: 'needle@winterfell.com',
+    },
   },
   {
     firstName: 'Jon',
     lastName: 'Snow',
     local: {
-      email: 'ilovedany@drogon.com'
-    }
+      email: 'ilovedany@drogon.com',
+    },
   },
   {
     firstName: 'Tyrion',
     lastName: 'Lannister',
     local: {
-      email: 'survivor@westeros.com'
-    }
+      email: 'survivor@westeros.com',
+    },
   },
   {
     firstName: 'The',
     lastName: 'Hound',
     local: {
-      email: 'badass@westeros.com'
-    }
+      email: 'badass@westeros.com',
+    },
   },
   {
     firstName: 'Jamie',
     lastName: 'Lannister',
     local: {
-      email: 'slayer@westeros.com'
-    }
+      email: 'slayer@westeros.com',
+    },
   },
 ];
 
@@ -68,39 +68,50 @@ const eventSeed = [
     category: 'Restaurant',
     location: 'Farmers Market',
     address: '7800 Main Street, Overland Park',
-    organizer: 'ref',
-    numRequired: 6,
+    // organizer: '',
+    // numRequired: 6,
     attendees: ['Jon', 'Joe', 'Jill', 'Arya', 'Sansa', 'Ned'],
     // potentialDatetimes: new Date('2018-08-17'),
     scheduledDatetime: new Date('2018-08-17'),
-    createdDate: new Date(Date.now()),
-    confirmed: false,
+    // createdDate: new Date(Date.now()),
+    // confirmed: false,
   },
   {
     name: 'Watch Food Documentaries and Eat Designer Popcorn',
     category: 'Entertainment',
     location: 'Toms House',
     address: '4545 Boulevard, KCMO',
-    organizer: 'ref',
-    numRequired: 4,
+    // organizer: '',
+    // numRequired: 4,
     attendees: ['Tom', 'Kerry', 'Jackie', 'Ben'],
     // potentialDatetimes: new Date('2018-07-01'),
     scheduledDatetime: new Date('2018-07-11'),
-    createdDate: new Date(Date.now()),
-    confirmed: true,
+    // createdDate: new Date(Date.now()),
+    // confirmed: true,
   },
   {
     name: 'Go to the Quidditch Match',
     category: 'Sports',
     location: 'Hogwarts',
     address: '9.75 London, England',
-    organizer: 'ref',
-    numRequired: 10,
-    attendees: ['Harry', 'Ron', 'Hermione', 'Fred', 'George', 'Percy', 'Bill', 'Luna', 'Nevelle', 'Ginny'],
+    // organizer: '',
+    // numRequired: 10,
+    attendees: [
+      'Harry',
+      'Ron',
+      'Hermione',
+      'Fred',
+      'George',
+      'Percy',
+      'Bill',
+      'Luna',
+      'Nevelle',
+      'Ginny',
+    ],
     // potentialDatetimes: new Date('2018-08-17'),
     scheduledDatetime: new Date('2018-08-17'),
-    createdDate: new Date(Date.now()),
-    confirmed: true,
+    // createdDate: new Date(Date.now()),
+    // confirmed: true,
   },
 ];
 
@@ -115,7 +126,7 @@ db.Event.remove({})
     process.exit(1);
   });
 
-  db.User.remove({})
+db.User.remove({})
   .then(() => db.User.collection.insertMany(userSeed))
   .then(data => {
     console.log(data.insertedIds.length + ' records inserted!');
