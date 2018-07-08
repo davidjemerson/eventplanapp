@@ -1,14 +1,47 @@
 //sets up the reusable Navbar component
 import React, { Component } from 'react';
+import axios from 'axios';
+import { Redirect } from 'react-router-dom';
 
 class NavbarDash extends Component {
+
+  constructor() {
+    super()
+    this.state = {
+      redirectTo: null
+    }
+		this._logout = this._logout.bind(this)
+  }
+
+  _logout(event) {
+    event.preventDefault();
+    axios.post('/auth/logout').then(response => {
+      console.log(response.data);
+      if (response.status === 200) {
+        this.props.updateUser({
+          loggedIn: false,
+          user: null
+        })
+        this.setState({
+          redirectTo: '/'
+        });
+      }
+    });
+  }
+  
   render() {
     let user
+    let logout
     if (this.props.loggedIn) {
       user = this.props.user.firstName
+      logout = <button className="btn btn-outline-success my-2 my-sm-0" type="submit" onClick={this._logout}>LOG OUT</button>
     } else {
       user = "No User"
+      logout = <button className="btn btn-outline-success my-2 my-sm-0" type="submit">LOG OUT</button>
     }
+    if (this.state.redirectTo) {
+			return <Redirect to={{ pathname: this.state.redirectTo }} />
+		}
     return (
       <nav className="navbar navbar-expand-lg navDash">
           <a className="navbar-brand" href="/">
@@ -25,12 +58,7 @@ class NavbarDash extends Component {
             <span className="user-name">
               Welcome, {user}.
             </span>
-            <button
-              className="btn btn-outline-success my-2 my-sm-0"
-              type="submit"
-            >
-              LOG OUT
-            </button>
+            {logout}
           </div>
 
           {/* Mobile nav for smaller screens */}

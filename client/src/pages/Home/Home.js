@@ -62,7 +62,7 @@ class Home extends Component {
     let navbar
     if (this.props.loggedIn) {
       console.log("rendering the logged in dash");
-      navbar = <NavbarDash loggedIn={this.props.loggedIn} user={this.props.user} _logout={this.props._logout} />
+      navbar = <NavbarDash updateUser={this.props.updateUser} loggedIn={this.props.loggedIn} user={this.props.user} />
     } else {
       console.log("rendering the not logged in dash");
       navbar = <NavbarDash />
