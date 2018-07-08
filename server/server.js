@@ -29,8 +29,6 @@ app.use(passport.session())
 app.use(express.static("client/build"));
 app.use(routes);
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/eventplandb");
-
 app.listen(PORT, function() {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
