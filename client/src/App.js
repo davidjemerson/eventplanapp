@@ -69,8 +69,8 @@ class App extends Component {
       console.log("App rendering logged in");
       splash = <Route exact path="/" render={() => <Splash loggedIn={this.state.loggedIn} user={this.state.user} />}/>
       home = <Route exact path="/dashboard/home" render={() => <Home updateUser={this.updateUser} loggedIn={this.state.loggedIn} user={this.state.user} />}/>
-      create = <Route exact path="/dashboard/create" render={() => <Create loggedIn={this.state.loggedIn} user={this.state.user} />}/>
-      friends = <Route exact path="/dashboard/friends" render={() => <Friends loggedIn={this.state.loggedIn} user={this.state.user} />}/>
+      create = <Route exact path="/dashboard/create" render={() => <Create updateUser={this.updateUser} loggedIn={this.state.loggedIn} user={this.state.user} />}/>
+      friends = <Route exact path="/dashboard/friends" render={() => <Friends updateUser={this.updateUser} loggedIn={this.state.loggedIn} user={this.state.user} />}/>
       signin = <Route exact path="/signin" render={() => <Signin loggedIn={this.state.loggedIn} user={this.state.user} />}/>
     } else {
       console.log("App rendering logged out");

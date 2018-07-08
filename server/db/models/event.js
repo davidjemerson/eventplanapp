@@ -13,10 +13,10 @@ const eventSchema = new Schema({
   location: { type: String, required: true },
   address: { type: String, required: true },
   organizer: { type: Schema.Types.ObjectId, ref: 'User', required: true },
-  numRequired: { type: Number, required: true },
-  // attendees: { type: Array, required: true },
+  // // numRequired: { type: Number, required: true },
+  // // attendees: { type: Array, required: true },
   scheduledDatetime: { type: Date, required: true },
-  createdDate: { type: Date, default: Date.now },
+  // createdDate: { type: Date, default: Date.now },
   // confirmed: { type: Boolean, default: false },
 });
 
