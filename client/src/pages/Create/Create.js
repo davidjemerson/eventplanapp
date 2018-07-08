@@ -5,7 +5,6 @@ import Sidebar from '../../components/Sidebar';
 import API from '../../utils/API';
 // import CreateForm from '../../components/Create/CreateForm';
 import { Input, FormBtn } from '../../components/Create';
-import Moment from 'react-moment';
 
 import './Create.css';
 
@@ -66,8 +65,8 @@ class Create extends Component {
         category: this.state.category,
         location: this.state.location,
         scheduledDatetime: this.state.scheduledDatetime,
-        organizer: this.props.user._id
-        // address: this.state.address,
+        organizer: this.props.user._id,
+        address: this.state.address,
         // numRequired: this.state.numrequired,
         // attendees: newAttendeeArray
       })
