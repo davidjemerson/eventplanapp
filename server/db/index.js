@@ -1,29 +1,28 @@
-// /* Mongo Database
-// * - this is where we set up our connection to the mongo database
-// */
-// const mongoose = require('mongoose')
-// mongoose.Promise = global.Promise
-// let MONGO_URL
-// const MONGO_LOCAL_URL = 'mongodb://localhost/eventplandb'
+const mongoose = require('mongoose')
+mongoose.Promise = global.Promise
 
-// if (process.env.MONGODB_URI) {
-// 	mongoose.connect(process.env.MONGODB_URI)
-// 	MONGO_URL = process.env.MONGODB_URI
-// } else {
-// 	mongoose.connect(MONGO_LOCAL_URL) // local mongo url
-// 	MONGO_URL = MONGO_LOCAL_URL
-// }
+let MONGO_URL
+const MONGO_LOCAL_URL = 'mongodb://localhost/eventplandb'
 
-// // should mongoose.connection be put in the call back of mongoose.connect???
-// const db = mongoose.connection
-// db.on('error', err => {
-// 	console.log(`There was an error connecting to the database: ${err}`)
-// })
-// db.once('open', () => {
-// 	console.log(
-// 		`You have successfully connected to your mongo database: ${MONGO_URL}`
-// 	)
-// })
+if (process.env.MONGODB_URI) {
+	MONGO_URL = process.env.MONGODB_URI
+} else {
+	MONGO_URL = MONGO_LOCAL_URL
+}
 
-// module.exports = db
-// module.exports = { User: require("./models/user") };
+mongoose.connect(MONGO_URL).then(
+    () => { 
+        /** ready to use. The `mongoose.connect()` promise resolves to undefined. */ 
+        console.log('Connected to Mongo');
+        
+    },
+    err => {
+         /** handle initial connection error */ 
+         console.log('error connecting to Mongo: ')
+         console.log(err);
+         
+        }
+);
+
+module.exports = mongoose.connection;
+// module.exports = { User: require("./models/user"), Event: require("./models/event") };

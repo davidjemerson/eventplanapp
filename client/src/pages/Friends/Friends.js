@@ -3,11 +3,37 @@ import NavbarDash from '../../components/NavbarDash';
 import Sidebar from '../../components/Sidebar';
 import FriendCard from '../../components/FriendCard';
 import Footer from '../../components/Footer';
+import API from '../../utils/API';
 import './Friends.css';
 
 class Friends extends Component {
   state = {
-    //TODO add some shit to state here 😎
+    friends: [],
+    firstName: '',
+    lastName: '',
+    local: {
+      email: ''
+    }
+  };
+
+  componentDidMount() {
+    this.loadFriends();
+    console.log(this.state.friends);
+  }
+
+  loadFriends = () => {
+    API.getAllUsers()
+      .then(res => {
+        this.setState({
+          friends: res.data,
+          firstName: '',
+          lastName: '',
+          local: {
+            email: ''
+          }
+        })
+      })
+      .catch(err => console.log(err));
   };
 
   render() {
@@ -24,7 +50,13 @@ class Friends extends Component {
                 <h1 className="friend-heading">FRIENDS</h1>
                 <hr />
                 {/* //TODO we'll have to map over our friends here */}
-                <FriendCard />
+                {this.state.friends.map(friend => {
+                  return (
+                    <FriendCard 
+                      friend={friend}
+                    />
+                  )
+                })}
               </div>
             </div>
           </div>

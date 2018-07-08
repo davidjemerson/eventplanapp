@@ -1,13 +1,25 @@
 //sets up the reusable Navbar component
 import React, { Component } from 'react';
 
-class NavbarDash extends Component {
+class NavbarSignin extends Component {
   render() {
     return (
-      <nav className="navbar navbar-expand-lg navDash">
+      <nav className="navbar navbar-expand-lg navSign">
           <a className="navbar-brand" href="/">
             EVENTPLAN
           </a>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon" />
+          </button>
+
           <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
               <li className="nav-item active">
@@ -16,28 +28,18 @@ class NavbarDash extends Component {
                 </span>
               </li>
             </ul>
-            <span className="user-name">
-              Welcome, propname.
-            </span>
+            <a href="/signin">
             <button
               className="btn btn-outline-success my-2 my-sm-0"
               type="submit"
             >
-              LOG OUT
+              GET STARTED
             </button>
-          </div>
-
-          {/* Mobile nav for smaller screens */}
-          <div className="mobile-nav">
-            <a href="/"><i className="fas fa-sign-out-alt logout-icon"></i></a>
+            </a>
           </div>
       </nav>
     );
   }
 }
 
-export default NavbarDash;
-
-/* <span className="user-name">
-  Welcome, propname.
-</span> */
+export default NavbarSignin;

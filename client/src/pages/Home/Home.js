@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-//import Modal from '../../components/EventModal/Modal';
+import Modal from 'react-responsive-modal';
+import ModalInfo from '../../components/EventModal/Modal';
 import NavbarDash from '../../components/NavbarDash';
 import Sidebar from '../../components/Sidebar';
 import EventCard from '../../components/EventCard';
@@ -18,26 +19,30 @@ class Home extends Component {
     numAttendeesConfirmed: 0,
     eventDate: '',
     confirmed: false,
+    open: false,
+    selectedEvent: {
+      name: '',
+    },
+  };
 
-    // ------------------------------------------------
-    //! this is for the modal
-    //? mounted: false
-    // ------------------------------------------------
+  onCloseModal = () => {
+    this.setState({ open: false });
+  };
+
+  showModal = event => {
+    this.setState({ selectedEvent: event, open: true });
+    // console.log(event);
   };
 
   // when component mounts, load all events and save them to this.state.events
   componentDidMount() {
     this.loadEvents();
-    // ------------------------------------------------
-    //! this is for the modal
-    //? this.setState({ mounted: true });
-    // ------------------------------------------------
   }
 
   // load all the events and set them to this.state.events
   loadEvents = () => {
     API.getAllEvents()
-      .then(res =>
+      .then(res => {
         this.setState({
           events: res.data,
           name: '',
@@ -47,30 +52,13 @@ class Home extends Component {
           numAttendeesConfirmed: 0,
           eventDate: '',
           confirmed: false,
-        })
-      )
+        });
+      })
       .catch(err => console.log(err));
   };
 
-  // ------------------------------------------------
-  //! this is for the modal
-  // when someone submits, set state back to false
-  /* handleSubmit(e) {
-    this.setState({ mounted: false });
-    e.preventDefault();
-  } */
-  // ------------------------------------------------
-
   render() {
-    let child;
-
-    // ------------------------------------------------
-    //! this for modal
-    /* if (this.state.mounted) {
-      child = <Modal onSubmit={this.handleSubmit} />;
-    } */
-    // ------------------------------------------------
-
+    const { open } = this.state;
     return (
       <div>
         <NavbarDash />
@@ -86,15 +74,19 @@ class Home extends Component {
               {/* ------------------------------------------------------------------------------------------------------------------------------------------------------ */}
               {this.state.events.filter(event => event.confirmed).map(event => {
                 return (
-                  <EventCard
-                    key={event._id}
-                    category={event.category}
-                    date={event.scheduledDatetime}
-                    //TODO - attendees confirmed
-                    //TODO - attendees total
-                  />
+                  <div>
+                    <EventCard
+                      key={event._id}
+                      id={event._id}
+                      category={event.category}
+                      date={event.scheduledDatetime}
+                      event={event}
+                      handleClick={this.showModal}
+                    />
+                  </div>
                 );
               })}
+
               {/* ------------------------------------------------------------------------------------------------------------------------------------------------------ */}
               <h1 className="pend-heading">EVENTS NOT CONFIRMED</h1>
               <hr />
@@ -108,6 +100,8 @@ class Home extends Component {
                       key={event._id}
                       category={event.category}
                       date={event.scheduledDatetime}
+                      event={event}
+                      handleClick={this.showModal}
                       //TODO - attendees confirmed
                       //TODO - attendees total
                     />
@@ -116,13 +110,28 @@ class Home extends Component {
               {/* ------------------------------------------------------------------------------------------------------------------------------------------------------ */}
               <h1 className="create-heading">EVENTS I'VE CREATED</h1>
               <hr />
-              {/* //TODO --> map over only events that are CREATED here */}
-              <span>this is a dummy event not passed through props yet</span>
-              <EventCard />
+              {this.state.events
+                .filter(event => !event.confirmed)
+                .map(event => {
+                  return (
+                    <EventCard
+                      key={event._id}
+                      category={event.category}
+                      date={event.scheduledDatetime}
+                      event={event}
+                      handleClick={this.showModal}
+                      //TODO - attendees confirmed
+                      //TODO - attendees total
+                    />
+                  );
+                })}
             </div>
           </div>
         </div>
         <Footer />
+        <Modal open={open} onClose={this.onCloseModal} center>
+          <ModalInfo event={this.state.selectedEvent} />
+        </Modal>`
       </div>
     );
   }

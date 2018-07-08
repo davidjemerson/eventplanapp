@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Modal from '../../components/SignIn/Modal';
-import NavbarDash from '../../components/NavbarDash';
+import NavbarSignin from '../../components/NavbarSignin';
 import Footer from '../../components/Footer';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import './Signin.css';
@@ -29,7 +29,7 @@ class Signin extends Component {
     return (
       <div className="App Site bg-img">
         <div className="Site-Content">
-          <NavbarDash />
+          <NavbarSignin />
           <ReactCSSTransitionGroup
             transitionName="example"
             transitionEnterTimeout={500}
