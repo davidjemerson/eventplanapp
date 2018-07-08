@@ -82,16 +82,14 @@ class Home extends Component {
               {/* ------------------------------------------------------------------------------------------------------------------------------------------------------ */}
               {this.state.events.filter(event => event.confirmed).map(event => {
                 return (
-                  <div>
-                    <EventCard
-                      key={event._id}
-                      id={event._id}
-                      category={event.category}
-                      date={event.scheduledDatetime}
-                      event={event}
-                      handleClick={this.showModal}
-                    />
-                  </div>
+                  <EventCard
+                    key={event._id}
+                    id={event._id}
+                    category={event.category}
+                    date={event.scheduledDatetime}
+                    event={event}
+                    handleClick={this.showModal}
+                  />
                 );
               })}
 
