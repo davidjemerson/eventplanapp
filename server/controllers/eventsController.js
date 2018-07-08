@@ -1,34 +1,36 @@
-const db = require("../db/models/event");
+const db = require("../db/models");
 
 // Defining methods for the eventsController
 module.exports = {
   findAll: function(req, res) {
-    db
+    db.Event
       .find(req.query)
+      .populate('organizer')
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   findById: function(req, res) {
-    db
+    db.Event
       .findById(req.params.id)
+      .populate('organizer')
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
-    db
+    db.Event
       .create(req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   update: function(req, res) {
-    db
+    db.Event
       .findOneAndUpdate({ _id: req.params.id }, req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   remove: function(req, res) {
-    db
+    db.Event
       .findById({ _id: req.params.id })
       .then(dbModel => dbModel.remove())
       .then(dbModel => res.json(dbModel))

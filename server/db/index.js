@@ -25,4 +25,3 @@ mongoose.connect(MONGO_URL).then(
 );
 
 module.exports = mongoose.connection;
-// module.exports = { User: require("./models/user"), Event: require("./models/event") };
