@@ -12,15 +12,9 @@ const eventSchema = new Schema({
   category: { type: String, required: false },
   location: { type: String, required: true },
   address: { type: String, required: true },
-
-  /* -----------------------------------------------------
-    ---STETSON COMMENTED THIS OUT, GOT AN ERROR IF IT WASN'T
-  // organizer: { type: Schema.Types.ObjectId, ref: 'User', required: true },
-
-  */
-
-  // // numRequired: { type: Number, required: true },
-  // // attendees: { type: Array, required: true },
+  organizer: { type: Schema.Types.ObjectId, ref: 'User', required: true },
+  numRequired: { type: Number, required: true },
+  // attendees: { type: Array, required: true },
   scheduledDatetime: { type: Date, required: true },
   // createdDate: { type: Date, default: Date.now },
   // confirmed: { type: Boolean, default: false },

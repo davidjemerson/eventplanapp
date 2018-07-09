@@ -54,6 +54,8 @@ class Create extends Component {
     console.log('user id: ' + this.props.user._id);
     event.preventDefault();
 
+    const requiredAtt = parseInt(this.state.numRequired);
+
     // Splitting returned attendees string into separate strings in a new array
     // let newAttendees = this.state.attendees;
     // let newAttendeeArray = newAttendees.split(' ');
@@ -67,7 +69,7 @@ class Create extends Component {
         scheduledDatetime: this.state.scheduledDatetime,
         organizer: this.props.user._id,
         address: this.state.address,
-        // numRequired: this.state.numrequired,
+        numRequired: requiredAtt,
         // attendees: newAttendeeArray
       })
       .catch(err => console.log(err));
