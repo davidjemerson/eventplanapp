@@ -36,10 +36,18 @@ class Friends extends Component {
   };
 
   render() {
+    let navbar
+    if (this.props.loggedIn) {
+      console.log("rendering the logged in dash");
+      navbar = <NavbarDash updateUser={this.props.updateUser} loggedIn={this.props.loggedIn} user={this.props.user} />
+    } else {
+      console.log("rendering the not logged in dash");
+      navbar = <NavbarDash />
+    }
     return (
       <div className="App Site">
         <div className="Site-Content">
-          <NavbarDash />
+          {navbar}
           <div className="container-fluid">
             <div className="row">
               <div className="sidebar">
