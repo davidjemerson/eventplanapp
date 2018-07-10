@@ -14,12 +14,12 @@ const EventCard = props => (
         <Moment format="D">{props.date}</Moment>
       </h6>
       <p className="card-text">2 of 7 Friends Going</p>
-      <button
+      <button className="event-btn"
         onClick={e => {
           props.handleClick(props.event);
         }}
       >
-        Click Me
+        MORE
       </button>
     </div>
   </div>
