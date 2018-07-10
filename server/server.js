@@ -26,7 +26,7 @@ app.use(
 app.use(passport.initialize())
 app.use(passport.session()) 
 
-app.use(express.static("../client/build"));
+app.use(express.static("../../client/build"));
 app.use(routes);
 
 app.listen(PORT, function() {
