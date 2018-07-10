@@ -44,7 +44,7 @@ class Create extends Component {
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({
-      [name]: value 
+      [name]: value
     });
   };
 
