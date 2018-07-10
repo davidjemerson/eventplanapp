@@ -23,6 +23,7 @@ class Friends extends Component {
   loadFriends = () => {
     API.getAllUsers()
       .then(res => {
+        console.log(res.data);
         this.setState({
           friends: res.data,
           firstName: '',
@@ -58,7 +59,7 @@ class Friends extends Component {
                 <hr />
                 {this.state.friends.map(friend => {
                   return (
-                    <FriendCard 
+                    <FriendCard key={friend._id.toString()}
                       friend={friend}
                     />
                   )
