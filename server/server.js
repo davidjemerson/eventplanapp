@@ -26,7 +26,12 @@ app.use(
 app.use(passport.initialize())
 app.use(passport.session()) 
 
-app.use(express.static("client/build"));
+if (process.env.NODE_ENV === 'production') {
+	app.use(express.static(path.join(__dirname, 'client/build')));
+} else {
+	app.use(express.static("client/build"));
+}
+
 app.use(routes);
 
 app.listen(PORT, function() {

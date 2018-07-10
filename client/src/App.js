@@ -59,36 +59,36 @@ class App extends Component {
   }
 
   render() {
-    // let splash
-    // let home
-    // let create
-    // let friends
-    // let signin
+    let splash
+    let home
+    let create
+    let friends
+    let signin
 
-    // if (this.state.loggedIn) {
-    //   console.log("App rendering logged in");
-    //   splash = <Route exact path="/" render={() => <Splash loggedIn={this.state.loggedIn} user={this.state.user} />}/>
-    //   home = <Route exact path="/dashboard/home" render={() => <Home updateUser={this.updateUser} loggedIn={this.state.loggedIn} user={this.state.user} />}/>
-    //   create = <Route exact path="/dashboard/create" render={() => <Create updateUser={this.updateUser} loggedIn={this.state.loggedIn} user={this.state.user} />}/>
-    //   friends = <Route exact path="/dashboard/friends" render={() => <Friends updateUser={this.updateUser} loggedIn={this.state.loggedIn} user={this.state.user} />}/>
-    //   signin = <Route exact path="/signin" render={() => <Signin loggedIn={this.state.loggedIn} user={this.state.user} />}/>
-    // } else {
-    //   console.log("App rendering logged out");
-    //   splash = <Route exact path="/" component={Splash} />
-    //   home = <Route exact path="/dashboard/home" updateUser={this.props.updateUser} component={Home} />
-    //   create = <Route exact path="/dashboard/create" component={Create} />
-    //   friends = <Route exact path="/dashboard/friends" component={Friends} />
-    //   signin = <Route exact path="/signin" render={() => <Signin _login={this._login} _googleSignin={this._googleSignin} />}/>
-    // }
-    return (
-      <Router>
-        <div>
-          <Switch>
-          splash = <Route exact path="/" component={Splash} />
+    if (this.state.loggedIn) {
+      console.log("App rendering logged in");
+      splash = <Route exact path="/" render={() => <Splash loggedIn={this.state.loggedIn} user={this.state.user} />}/>
+      home = <Route exact path="/dashboard/home" render={() => <Home updateUser={this.updateUser} loggedIn={this.state.loggedIn} user={this.state.user} />}/>
+      create = <Route exact path="/dashboard/create" render={() => <Create updateUser={this.updateUser} loggedIn={this.state.loggedIn} user={this.state.user} />}/>
+      friends = <Route exact path="/dashboard/friends" render={() => <Friends updateUser={this.updateUser} loggedIn={this.state.loggedIn} user={this.state.user} />}/>
+      signin = <Route exact path="/signin" render={() => <Signin loggedIn={this.state.loggedIn} user={this.state.user} />}/>
+    } else {
+      console.log("App rendering logged out");
+      splash = <Route exact path="/" component={Splash} />
       home = <Route exact path="/dashboard/home" updateUser={this.props.updateUser} component={Home} />
       create = <Route exact path="/dashboard/create" component={Create} />
       friends = <Route exact path="/dashboard/friends" component={Friends} />
       signin = <Route exact path="/signin" render={() => <Signin _login={this._login} _googleSignin={this._googleSignin} />}/>
+    }
+    return (
+      <Router>
+        <div>
+          <Switch>
+            {splash}
+            {home}
+            {create}
+            {friends}
+            {signin}
           </Switch>
         </div>
       </Router>
