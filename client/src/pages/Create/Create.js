@@ -9,16 +9,20 @@ import { Input, FormBtn } from '../../components/Create';
 import './Create.css';
 
 class Create extends Component {
-  state = {
-    search: '',
-    category: '',
-    name: '',
-    scheduledDatetime: '',
-    location: '',
-    address: '',
-    numRequired: '',
-    attendees: [],
-  };
+  constructor() {
+    super();
+
+    this.state = {
+      search: '',
+      category: '',
+      name: '',
+      scheduledDatetime: '',
+      location: '',
+      address: '',
+      numRequired: '',
+      attendees: [],
+    };
+  }
 
   // When component mounts, get eventType and friends from API
   // componentDidMount() {
@@ -115,6 +119,7 @@ class Create extends Component {
                 />
                 <label className="event-date">Event Date ( MM/DD/YYYY )</label>
                 <Input
+                  type='date'
                   value={this.state.scheduledDatetime}
                   onChange={this.handleInputChange}
                   name="scheduledDatetime"
