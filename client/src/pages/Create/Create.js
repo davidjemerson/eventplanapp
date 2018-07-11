@@ -54,11 +54,19 @@ class Create extends Component {
     console.log('user id: ' + this.props.user._id);
     event.preventDefault();
 
-    const requiredAtt = parseInt(this.state.numRequired);
+    const requiredAtt = parseInt((this.state.numRequired), 10);
 
     // Splitting returned attendees string into separate strings in a new array
-    // let newAttendees = this.state.attendees;
+    let newAttendees = this.state.attendees;
+    let newAttendeeArray = newAttendees.split(/[ ,]+/);
+    // if (newAttendees.indexOf(',') > -1) { 
+    //   let newAttendeeArray = newAttendees.split(',');
+    // } else {
+    //   let newAttendeeArray = newAttendees.split(' ');
+    // };
+
     // let newAttendeeArray = newAttendees.split(' ');
+    // console.log(newAttendeeArray);
     // let finalAttendees = [];
     // finalAttendees.push(newAttendeeArray);
 
@@ -70,7 +78,7 @@ class Create extends Component {
         organizer: this.props.user._id,
         address: this.state.address,
         numRequired: requiredAtt,
-        // attendees: newAttendeeArray
+        attendees: newAttendeeArray
       })
       .catch(err => console.log(err));
   };

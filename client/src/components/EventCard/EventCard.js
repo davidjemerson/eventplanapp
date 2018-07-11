@@ -13,7 +13,7 @@ const EventCard = props => (
       <h6 className="card-day">
         <Moment format="D">{props.date}</Moment>
       </h6>
-      <p className="card-text">2 of 7 Friends Going</p>
+      <p className="card-text">0 of {props.event.numRequired} Friends Going</p>
       <button className="event-btn"
         onClick={e => {
           props.handleClick(props.event);
@@ -26,3 +26,4 @@ const EventCard = props => (
 );
 
 export default EventCard;
+
