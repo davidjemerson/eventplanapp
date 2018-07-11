@@ -137,7 +137,7 @@ class Home extends Component {
         <Footer />
         <Modal open={open} onClose={this.onCloseModal} center>
           <ModalInfo event={this.state.selectedEvent} />
-        </Modal>`
+        </Modal>
       </div>
     );
   }

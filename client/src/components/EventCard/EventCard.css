@@ -150,6 +150,29 @@ svg.styles_closeIcon__1QwbI {
   padding-right: 40px;
 }
 
+.btn.going-btn {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  color: #1c2127;
+  background-color: transparent;
+  padding: 5px 25px;
+  border-color: #29bf89;
+  border-radius: 0;
+  margin-top: 20px;
+}
+
+.btn.notGoing-btn {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  color: #1c2127;
+  background-color: transparent;
+  padding: 5px 25px;
+  border-color: #29bf89;
+  border-radius: 0;
+  margin-top: 20px;
+  margin-left: 15px;
+}
+
 /* Media Query - Max Width (1214px)
 ------------------------------------------------*/
 @media only screen and (max-width: 1214px) {
