@@ -3,6 +3,7 @@ import NavbarDash from '../../components/NavbarDash';
 import Footer from '../../components/Footer';
 import Sidebar from '../../components/Sidebar';
 import API from '../../utils/API';
+import { Redirect } from 'react-router-dom';
 // import CreateForm from '../../components/Create/CreateForm';
 import { Input, FormBtn } from '../../components/Create';
 
@@ -21,6 +22,7 @@ class Create extends Component {
       address: '',
       numRequired: '',
       attendees: [],
+      redirectTo: null
     };
   }
 
@@ -48,7 +50,7 @@ class Create extends Component {
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({
-      [name]: value
+      [name]: value,
     });
   };
 
@@ -85,9 +87,15 @@ class Create extends Component {
         attendees: newAttendeeArray
       })
       .catch(err => console.log(err));
+    this.setState({
+      redirectTo: '/dashboard/home'
+    })
   };
 
   render() {
+    if (this.state.redirectTo) {
+			return <Redirect to={{ pathname: this.state.redirectTo }} />
+		}
     let navbar
     if (this.props.loggedIn) {
       console.log("rendering the logged in dash");
