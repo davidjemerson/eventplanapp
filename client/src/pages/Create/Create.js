@@ -94,7 +94,7 @@ class Create extends Component {
                 <Sidebar />
               </div>
               <div className="col-12 create-container">
-                <h1 className="create-heading">CREATE YOUR EVENT!</h1>
+                <h1 className="created-heading">CREATE YOUR EVENT!</h1>
                 <hr />
                 <form>
                 <label className="event-type">Event Category</label>
