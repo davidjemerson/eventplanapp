@@ -78,8 +78,8 @@ class Home extends Component {
             <div className="col-sm-12 main-container">
               <h1 className="attend-heading">EVENTS CONFIRMED</h1>
               <hr />
-              {/* //DONE --> map over only events that are ATTENDING here */}
-              {/* ------------------------------------------------------------------------------------------------------------------------------------------------------ */}
+              <div className="row">
+              <div className="col-lg-12">
               {this.state.events.filter(event => event.confirmed).map(event => {
                 return (
                   <EventCard
@@ -92,12 +92,13 @@ class Home extends Component {
                   />
                 );
               })}
+              </div>
+              </div>
 
-              {/* ------------------------------------------------------------------------------------------------------------------------------------------------------ */}
               <h1 className="pend-heading">EVENTS NOT CONFIRMED</h1>
               <hr />
-              {/* //DONE --> map over only events that are ATTENDING here */}
-              {/* ------------------------------------------------------------------------------------------------------------------------------------------------------ */}
+              <div className="row">
+              <div className="col-lg-12">
               {this.state.events
                 .filter(event => !event.confirmed)
                 .map(event => {
@@ -113,9 +114,13 @@ class Home extends Component {
                     />
                   );
                 })}
-              {/* ------------------------------------------------------------------------------------------------------------------------------------------------------ */}
+                </div>
+                </div>
+              
               <h1 className="create-heading">EVENTS I'VE CREATED</h1>
               <hr />
+              <div className="row">
+              <div className="col-lg-12">
               {this.state.events
                 .filter(event => !event.confirmed)
                 .map(event => {
@@ -131,6 +136,8 @@ class Home extends Component {
                     />
                   );
                 })}
+                </div>
+                </div>
             </div>
           </div>
         </div>

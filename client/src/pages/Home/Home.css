@@ -59,7 +59,7 @@ div.sidebar {
 /* Home Container styles
 ------------------------------------------------*/
 .main-container {
-  max-width: 70%;
+  max-width: 75%;
   margin-top: 25px;
   margin-left: 25px;
   margin-bottom: 100px;
@@ -71,14 +71,14 @@ div.sidebar {
   font-size: 27px;
 }
 
-.pend-heading {
+h1.pend-heading {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: 27px;
   margin-top: 50px;
 }
 
-.create-heading {
+h1.create-heading {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: 27px;
@@ -95,6 +95,17 @@ div.sidebar {
 
 .Site-Content {
   flex: 1;
+}
+
+/* Media Query - Max Width (1134px)
+------------------------------------------------*/
+@media only screen and (max-width: 1134px) {
+  .main-container {
+    max-width: 70%;
+    margin-top: 25px;
+    margin-left: 25px;
+    margin-bottom: 100px;
+  }
 }
 
 /* Media Query - Max Width (991px)
