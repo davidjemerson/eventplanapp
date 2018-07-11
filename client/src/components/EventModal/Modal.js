@@ -16,6 +16,8 @@ const ModalInfo = props => (
     <p className="loc-para"><span className="loc-title">Location:</span>{props.event.location}</p>
     <p className="add-para"><span className="add-title">Address:</span>{props.event.address}</p>
     <p className="who-para"><span className="who-title">Who Going:</span>{props.event.attendees}</p>
+    <button className="btn btn-outline my-2 my-sm-0     going-btn" type="submit"><i className="far fa-thumbs-up"></i> GOING</button>
+    <button className="btn btn-outline my-2 my-sm-0     notGoing-btn" type="submit"><i className="far fa-thumbs-down"></i> NOT GOING</button>
   </div>
 );
 
