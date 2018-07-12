@@ -28,6 +28,7 @@ const strategy = new GoogleStrategy(
 				console.log('====== post save ....')
 				const newGoogleUser = new User({
 					'google.googleId': id,
+					'local.email': email,
 					firstName: name.givenName,
 					lastName: name.familyName,
 					photos: photos
