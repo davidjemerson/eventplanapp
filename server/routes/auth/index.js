@@ -4,7 +4,7 @@ const User = require('../../db/models/user')
 const passport = require('../../passport')
 
 router.get('/google',
-  passport.authenticate('google', { scope: ['https://www.googleapis.com/auth/plus.login'] }));
+  passport.authenticate('google', { scope: ['https://www.googleapis.com/auth/plus.login', 'email'] }));
 
 router.get('/google/callback', 
   passport.authenticate('google', { failureRedirect: '/login' }),
