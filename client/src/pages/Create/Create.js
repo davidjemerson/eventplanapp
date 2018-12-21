@@ -6,6 +6,7 @@ import API from '../../utils/API';
 import { Redirect } from 'react-router-dom';
 // import CreateForm from '../../components/Create/CreateForm';
 import { Input, FormBtn } from '../../components/Create';
+import Calendar from '../../components/Create/Calendar';
 
 import './Create.css';
 
@@ -133,14 +134,8 @@ class Create extends Component {
                   name="name"
                   placeholder="Name Your Awesome Event" id="event-name"
                 />
-                <label className="event-date">Event Date ( MM/DD/YYYY )</label>
-                <Input
-                  type='date'
-                  value={this.state.scheduledDatetime}
-                  onChange={this.handleInputChange}
-                  name="scheduledDatetime"
-                  placeholder="When Is This Happening?" id="event-date"
-                />
+                <label className="event-date">Pick Some Dates</label>
+                <Calendar />
                 <label className="event-location">Where's Your Event</label>
                 <Input
                   value={this.state.location}
