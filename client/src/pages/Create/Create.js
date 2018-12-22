@@ -6,7 +6,7 @@ import API from '../../utils/API';
 import { Redirect } from 'react-router-dom';
 // import CreateForm from '../../components/Create/CreateForm';
 import { Input, FormBtn } from '../../components/Create';
-import Calendar from '../../components/Create/Calendar';
+import Calendar from '../../components/Calendar/Calendar';
 
 import './Create.css';
 
