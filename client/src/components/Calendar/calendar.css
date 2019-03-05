@@ -4,9 +4,10 @@
     padding: 1em;
     background-color: lightgrey;
     border: 1px solid white;
+    cursor: pointer;
 }
 
-.disabled {
+.other-month {
     background-color: grey;
 }
 
@@ -16,4 +17,12 @@
 
 .days-row {
     border-bottom: 2px solid black;
+}
+
+.picker {
+    cursor: pointer;
+}
+
+.selected {
+    background-color: blue;
 }

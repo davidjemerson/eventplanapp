@@ -5,6 +5,8 @@ module.exports = {
   findAll: function(req, res) {
     db.User
       .find(req.query)
+      .populate( 'events.organizer' )
+      .populate( 'events.invited' )
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
@@ -12,14 +14,16 @@ module.exports = {
   findById: function(req, res) {
     db.User
       .findById(req.params.id)
-      .populate( 'events' )
+      .populate( 'events.organizer' )
+      .populate( 'events.invited' )
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   findByEmail: function(req, res) {
     db.User
       .findOne({ 'local.email': req.params.email })
-      .populate( 'events' )
+      .populate( 'events.organizer' )
+      .populate( 'events.invited' )
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

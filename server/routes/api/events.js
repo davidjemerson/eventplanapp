@@ -11,4 +11,9 @@ router
   .put(eventsController.update)
   .delete(eventsController.remove);
 
+router
+  .route("/responses/:id")
+  .get(eventsController.viewResponses)
+  .put(eventsController.addResponse);
+
 module.exports = router;

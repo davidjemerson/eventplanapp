@@ -9,6 +9,7 @@ const MongoStore = require('connect-mongo')(session);
 const passport = require('./passport');
 const app = express();
 const routes = require("./routes");
+const utils = require('./utils/scheduleEvent');
 const PORT = process.env.PORT || 3001;
 
 app.use(morgan('dev'))
@@ -33,3 +34,5 @@ app.use(routes);
 app.listen(PORT, function() {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
+
+setInterval(() => utils.scheduleEvents(), 3600000);

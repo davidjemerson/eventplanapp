@@ -33,4 +33,16 @@ export default {
   deleteEvent: function(id) {
     return axios.delete('/api/events/' + id);
   },
+  // Updates event data for the given id
+  updateEvent: function(id, eventData) {
+    return axios.put('/api/events/' + id, eventData);
+  },
+  // Appends an invite response to the given event id
+  addResponse: function(id, newResponse) {
+    return axios.put('/api/events/responses' + id, newResponse);
+  },
+  // Returns all responses for given event id
+  getResponses: function(id) {
+    return axios.get('/api/events/responses' + id);
+  }
 };

@@ -14,19 +14,10 @@ const userSchema = new Schema({
 	google: {
 		googleId: { type: String, required: false }
 	},
-	photos: [],
-	events: [ {type: Schema.Types.ObjectId, ref: 'Event'} ],
-	friends: [ { type: String } ]
-	// local: {
-	// 	email: { type: String, unique: true },
-	// 	password: { type: String }
-	// },
-	// google: {
-	// 	id: { type: String },
-	// 	photos: []
-	// },
-	// firstName: { type: String },
-	// lastName: { type: String }
+	events: {
+		organizer: [ {type: Schema.Types.ObjectId, ref: 'Event'} ],
+		invited: [ {type: Schema.Types.ObjectId, ref: 'Event'} ]
+	}
 });
 
 // Define schema methods

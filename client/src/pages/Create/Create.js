@@ -4,50 +4,27 @@ import Footer from '../../components/Footer';
 import Sidebar from '../../components/Sidebar';
 import API from '../../utils/API';
 import { Redirect } from 'react-router-dom';
-// import CreateForm from '../../components/Create/CreateForm';
 import { Input, FormBtn } from '../../components/Create';
-import Calendar from '../../components/Calendar/Calendar';
+import SelectDates from '../../components/Create/SelectDates';
 
 import './Create.css';
 
 class Create extends Component {
   constructor() {
     super();
-
     this.state = {
-      search: '',
-      category: '',
       name: '',
-      scheduledDatetime: '',
       location: '',
       address: '',
-      numRequired: '',
-      attendees: [],
+      attendees: [''],
+      potentialDates: [''],
+      numPotential: 1,
+      numInvites: 1,
+      defaultSchedule: '',
       redirectTo: null
     };
   }
 
-  // When component mounts, get eventType and friends from API
-  // componentDidMount() {
-  //get the events we let them select from
-  //TODO
-  // API.getEventTypes()
-  //   .then(res => this.setState({ eventType: res.data.message }))
-  //   .catch(err => console.log(err));
-  //get their pre-loaded friends
-  //   API.getAllUsers()
-  //     .then(res => this.setState({ friends: res.data.message }))
-  //     .catch(err => console.log(err));
-  // }
-
-  // Add attendee to array db
-  // addAttendee = newAttendee => {
-  //   this.setState.push({ attendees: [...this.state.attendees, newAttendee]})
-  // };
-
-  // let newAttendee = this.setState.push({ attendees: [...this.state.attendees, newAttendee]});
-
-  //TODO: write handleInputChange function
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({
@@ -60,38 +37,56 @@ class Create extends Component {
   handleFormSubmit = event => {
     console.log('user id: ' + this.props.user._id);
     event.preventDefault();
-
-    const requiredAtt = parseInt((this.state.numRequired), 10);
-
-    // Splitting returned attendees string into separate strings in a new array
-    let newAttendees = this.state.attendees;
-    let newAttendeeArray = newAttendees.split(/[ ,]+/);
-    // if (newAttendees.indexOf(',') > -1) { 
-    //   let newAttendeeArray = newAttendees.split(',');
-    // } else {
-    //   let newAttendeeArray = newAttendees.split(' ');
-    // };
-
-    // let newAttendeeArray = newAttendees.split(' ');
-    // console.log(newAttendeeArray);
-    // let finalAttendees = [];
-    // finalAttendees.push(newAttendeeArray);
-
       API.createEvent({
         name: this.state.name,
-        category: this.state.category,
         location: this.state.location,
-        scheduledDatetime: this.state.scheduledDatetime,
-        organizer: this.props.user._id,
         address: this.state.address,
-        numRequired: requiredAtt,
-        attendees: newAttendeeArray
+        attendees: this.state.attendees,
+        potentialDates: this.state.potentialDates,
+        defaultSchedule: this.state.defaultSchedule,
+        organizer: this.props.user._id
       })
       .catch(err => console.log(err));
     this.setState({
       redirectTo: '/dashboard/home'
     })
   };
+
+  renderDateSelects() {
+    const dateSelects = [];
+    for (let i = 0; i < this.state.numPotential; i++) {
+      dateSelects.push(<SelectDates key={i} name={'dateSelect-' + i}/>);
+    };
+    return dateSelects;
+  }
+
+  getDate() {
+    let thisDate = this.state.month + '-' + this.state.day + '-' + this.state.year;
+    console.log(thisDate);
+  }
+
+  renderInvitees() {
+    const invitees = [];
+    for (let i = 0; i < this.state.attendees.length; i++) {
+      invitees.push(<Input placeholder='email address' key={i} name={'invitee-' + i} />);
+    };
+    return invitees;
+  }
+
+  addInvites = event => {
+    event.preventDefault();
+    this.setState((prevState) => ({
+      attendees: [...prevState.attendees, ''],
+    }));
+  }
+
+  addDates = event => {
+    event.preventDefault();
+    this.setState({
+      numPotential: this.state.numPotential + 1
+    });
+    console.log("Date stuff:" + this._SelectDates);
+  }
 
   render() {
     if (this.state.redirectTo) {
@@ -118,15 +113,6 @@ class Create extends Component {
                 <h1 className="created-heading">CREATE YOUR EVENT!</h1>
                 <hr />
                 <form>
-                <label className="event-type">Event Category</label>
-                  <div className="form-group">
-                    <select value={this.state.category} onChange={this.handleInputChange} name='category' className='form-control' id='event-type'>
-                      <option category="restaurants">Restaurants</option>
-                      <option category="bars">Bars</option>
-                      <option category="concerts">Concerts</option>
-                      <option category="movies">Movies</option>
-                    </select>
-                  </div>
                 <label className="event-name">Event Name</label>
                 <Input
                   value={this.state.name}
@@ -134,8 +120,6 @@ class Create extends Component {
                   name="name"
                   placeholder="Name Your Awesome Event" id="event-name"
                 />
-                <label className="event-date">Pick Some Dates</label>
-                <Calendar />
                 <label className="event-location">Where's Your Event</label>
                 <Input
                   value={this.state.location}
@@ -150,28 +134,20 @@ class Create extends Component {
                   name="address"
                   placeholder="Address of the Event" id="event-address"
                 />
-                <label className="friends-reqd">How Many People Do You Need?</label>
-                  <div className="form-group">
-                    <select value={this.state.numrequired} onChange={this.handleInputChange} name='numRequired' className='form-control' id='friends-reqd'>
-                      <option numrequired="1">1</option>
-                      <option numrequired="2">2</option>
-                      <option numrequired="3">3</option>
-                      <option numrequired="4">4</option>
-                      <option numrequired="5">5</option>
-                      <option numrequired="6">6</option>
-                      <option numrequired="7">7</option>
-                      <option numrequired="8">8</option>
-                      <option numrequired="9">9</option>
-                      <option numrequired="10">10</option>
-                    </select>
-                  </div>
                 <label className="friends-reqd">Wanna Invite Some People?</label>
-                <Input
-                  value={this.state.attendees}
-                  onChange={this.handleInputChange}
-                  name="attendees"
-                  id="add-friends"
-                />
+                <div id="inviteEmails">
+                  {this.renderInvitees()}
+                  <FormBtn onClick={this.addInvites}>Add Invitee</FormBtn>
+                </div>
+                <label className="event-date">Pick Some Dates and Times</label>
+                <div id="datesAndTimes">
+                  {this.renderDateSelects()}
+                  <FormBtn onClick={this.addDates}>Add Date</FormBtn>
+                </div>
+                <label className="default-schedule">When do you need to hear back from everyone?{this.state.defaultSchedule}</label>
+                  <SelectDates
+                    name="defaultSchedule"
+                  />
                 <FormBtn
                   onClick={this.handleFormSubmit}
                 >SUBMIT
@@ -188,24 +164,3 @@ class Create extends Component {
 }
 
 export default Create;
-
-// () => this.state.addAttendee()
-
-// Old input for number of friends required
-/*<Input
-    value={this.state.numRequired}
-    onChange={this.handleInputChange}
-    name="numRequired"
-    placeholder="Enter Up To 10 People"
-    id="friends-reqd"
-  /> */
-
-// Old input for the category
- /* <Input
-    value={this.state.category}
-    onChange={this.handleInputChange}
-    name="category"
-    placeholder="What Type of Event?" id="event-type"
-  /> */
-
-
